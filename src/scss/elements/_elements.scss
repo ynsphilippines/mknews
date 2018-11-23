@@ -1,0 +1,65 @@
+* {
+  line-height: 1.5em;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat,sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: initial;
+}
+
+ul,
+dl,
+dt,
+dd {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
