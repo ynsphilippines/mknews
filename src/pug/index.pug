@@ -1,3 +1,262 @@
-.pogi
-  .ako hay ho
-  input(type="text")
+html(lang="ja")
+  head
+    title Make News
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+    link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+    link(href="/css/plugins/toastr.min.css" rel="stylesheet" type="text/css")
+    link(href="/css/main.min.css" rel="stylesheet" type="text/css")
+
+  body
+    main
+      //- BANNER SECTION
+      .banner#js-top
+        .banner__content
+          .banner__button
+            a.button.button--banner(href="/")
+              span.button__text カスタマイズ例
+
+          h1.banner__logo
+            img.banner__logo-image(src="/images/makenews-logo-pc.png" alt="Make News")
+          h2.banner__title
+            span.banner__title-text Customizable Design for closed community
+          h3.banner__subtitle
+            span.banner__subtitle-text クローズドコミュニティに最適化するメッセージデザイン  
+          .banner__phones
+            img.banner__phones-image(src="/images/makenews-phones-pc.png" alt="smart phones")
+
+      //- FIXED HEADER WHEN SCROLL
+      header.header
+        .header__content
+          .header__logo
+            a.header__logo-link(href="/")
+              img.header__logo-img(src="/images/makenews-logo-header.png" alt="make news logo")
+
+          nav.navigation
+            .navigation__list
+              .navigation__item(data-index='0')
+                a.navigation__link.navigation__link--active
+                  span トップ
+
+              .navigation__item(data-index='1')
+                a.navigation__link
+                  span ポイント
+              
+              .navigation__item(data-index='2')
+                a.navigation__link
+                  span カスタマイズ例
+              
+              .navigation__item(data-index='3')
+                a.navigation__link
+                  span カスタマイズフロー
+              
+              .navigation__item(data-index='4')
+                a.navigation__link
+                  span お問い合わせ
+              
+              .navigation__item(data-index='5')
+                a.navigation__link
+                  span 運営会社
+
+
+      //- POINTERS SECTION
+      section.section#js-point
+        .section__content
+          .section__title
+            h2.section__title-text ポイント
+        
+          .pointers
+            .pointers__image-wrapper
+              img.pointers__image(src="/images/devices.png" alt="devices")
+
+            .pointers__content
+              h3.pointers__content-title 
+                span 情報発信やブランディングに
+              .pointers__content-paragraph
+                p.pointers__paragraph-text Make News"は、ある特定のコミュニティ内にだけ共有できる情報を配信するプラットフォームアプリです (iPhone／Android)。
+                p.pointers__paragraph-text デザインのカスタマイズやプッシュ通知の実装だけでなく、独自の機能拡張にも対応いたします（60万円～）。データを自由に解析し、マーケティング活動にご活用ください
+    
+
+      //- CUSTOMIZED EXAMPLE SECTION
+      section.section.section--customized#js-customized
+        .section__content
+          .section__title
+            h2.section__title-text カスタマイズ例
+        
+          .customized-example
+            .customized-example__list
+              .customized-example__item
+                .customized-example__item-title
+                  span このテキストを試す このテキストを試す 
+                .customized-example__image-wrapper
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-1.png" alt="customization example")
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-2.png" alt="customization example")
+                .customized-example__button-wrapper
+                  button.button.button--white
+                    span.button__text 相談してみる
+
+              .customized-example__item
+                .customized-example__item-title
+                  span このテキストを試す このテキストを試す  
+                .customized-example__image-wrapper
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-1.png" alt="customization example")
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-2.png" alt="customization example")
+                .customized-example__button-wrapper
+                  button.button.button--white
+                    span.button__text 相談してみる
+              
+              .customized-example__item
+                .customized-example__item-title
+                  span このテキストを試す このテキストを試す  
+                .customized-example__image-wrapper
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-1.png" alt="customization example")
+                  .customized-example__image-item
+                    img.customized-example__image(src="/images/customized-example/customization-example-2.png" alt="customization example")
+                .customized-example__button-wrapper
+                  button.button.button--white
+                    span.button__text 相談してみる
+      
+
+      //- CUSTOMIZATION FLOW SECTION
+      section.section.section--customization-flow#js-customized-flow
+        .section__content
+          .section__title
+            h2.section__title-text カスタマイズフロー
+
+          .customized-flow
+            .customized-flow__list
+              .customized-flow__item
+                .customized-flow__item-image
+                  img.customized-flow__image(src="/images/customized-flow/customization-flow-1.png" alt="customization flow")
+                .customized-flow__item-content
+                  span.customized-flow__content-label １．ヒアリング
+                  .customized-flow__item-description
+                    p.customized-flow__description 背景や利用目的をうかがい、潜在的なニーズを抽出いたします。
+                    p.customized-flow__description いわゆる「要件定義」フェーズなので、まずはどんなご要望も気軽にお話しください
+            
+            .customized-flow__list
+              .customized-flow__item
+                .customized-flow__item-image
+                  img.customized-flow__image(src="/images/customized-flow/customization-flow-2.png" alt="customization flow")
+                .customized-flow__item-content
+                  span.customized-flow__content-label ２．デザイン＋実装
+                  .customized-flow__item-description
+                    p.customized-flow__description デザインをご確認いただいたあと、アプリを開発いたします。
+                    p.customized-flow__description 機能の内容により開発期間は異なりますので、くわしくはお問い合わせください
+            
+            .customized-flow__list
+              .customized-flow__item
+                .customized-flow__item-image
+                  img.customized-flow__image(src="/images/customized-flow/customization-flow-3.png" alt="customization flow")
+                .customized-flow__item-content
+                  span.customized-flow__content-label ３．動作チェック後リリース
+                  .customized-flow__item-description
+                    p.customized-flow__description 実装完了後、お客様にも動作チェックをしていただきます。
+                    p.customized-flow__description 「問題なし」となったら、いよいよアプリ配信です！
+            
+            .customized-flow__list
+              .customized-flow__item
+                .customized-flow__item-image
+                  img.customized-flow__image(src="/images/customized-flow/customization-flow-4.png" alt="customization flow")
+                .customized-flow__item-content
+                  span.customized-flow__content-label ４．保守／リニューアル
+                  .customized-flow__item-description
+                    p.customized-flow__description 管理画面の操作はお客様におこなっていただきますが、なんらかのトラブルが起き
+                    p.customized-flow__description た際は、相談のうえで弊社にて対応いたします。
+                
+      
+      //- CONSULTATION INQUIRIES SECTION
+      section.section#js-contactus
+        .section__content
+          .section__title
+            h2.section__title-text ご相談・お問い合わせ
+        
+          .inquiries
+            .inquiries__note
+              span.inquiries__note-text 本アプリを利用したい方、利用する前に相談したい方、お気軽にご連絡ください
+            
+            .inquiries__form
+              .inquiries__form-list.inquiries__form-list--error
+                label.inquiries__form-label ご法人名・屋号  
+                  span.inquiries__form-required ※
+                .inquiries__form-input
+                  input.inquiries__form-input-box(type="text")
+                  span.inquiries__form-error error
+              
+              .inquiries__form-list
+                label.inquiries__form-label 部署名   
+                .inquiries__form-input
+                  input.inquiries__form-input-box(type="text")
+              
+              .inquiries__form-list.inquiries__form-list--error
+                label.inquiries__form-label ご担当者名
+                  span.inquiries__form-required ※
+                .inquiries__form-input
+                  input.inquiries__form-input-box(type="text")
+                  span.inquiries__form-error error
+
+              .inquiries__form-list
+                label.inquiries__form-label メールアドレス
+                  span.inquiries__form-required ※
+                .inquiries__form-input
+                  input.inquiries__form-input-box(type="text")
+
+              .inquiries__form-list
+                label.inquiries__form-label 概要 
+                  span.inquiries__form-required ※
+                .inquiries__form-input
+                  select.inquiries__form-select-box#inquiries-overview
+              
+              .inquiries__form-list
+                label.inquiries__form-label 内容 
+                  span.inquiries__form-required ※
+                .inquiries__form-input
+                  textarea.inquiries__form-textarea
+
+              .inquiries__form-list
+                label.inquiries__form-label 
+                .inquiries__button-wrapper
+                  button.button.button--submit
+                    span.button__text 送信する
+
+    footer.footer#js-operating-company
+      .footer__container
+      .footer__icons
+        .footer__icons-wrapper
+          .footer__menu-icon
+            img.footer__icon.footer__icon-menu(src="/images/menu-icon.png")
+            img.footer__icon.footer__icon-menu--close(src="/images/menu-icon-close.png")
+          .footer__scroll-top
+            img.footer__icon(src="/images/fa-angle-up.png")
+
+      .footer__copyright
+        .footer__copyright-text
+          span Copyright © 2018 YNS Inc. All Rights Reserved.
+
+
+    .modal
+      .modal__navigation
+        ul.modal__navigation-list
+          li.modal__navigation-item(data-index="0") トップ
+          li.modal__navigation-item(data-index="1") ポイント
+          li.modal__navigation-item(data-index="2") カスタマイズ例
+          li.modal__navigation-item(data-index="3") カスタマイズフロー
+          li.modal__navigation-item(data-index="4") お問い合わせ
+          li.modal__navigation-item(data-index="5") 運営会社
+      
+
+      .modal__customized-flow
+        p.modal__customized-content 
+        .modal__customized-button
+          button.button.button--modal
+            span.button__text もとに戻る
+
+    script(src="/javascript/plugins/jquery-3.3.1.min.js")
+    script(src="/javascript/plugins/smtpjs.min.js")
+    script(src="/javascript/plugins/toastr.min.js")
+    script(src="/javascript/main.min.js")

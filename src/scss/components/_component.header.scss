@@ -1,3 +1,36 @@
-body {
-    background: red;
+.header {
+  background: $white;
+  box-shadow: 0 0 10px #dcdcdc;
+  padding: 8px 0;
+  width: 100%;
+  position: absolute;
+  top: 865px;
+  left: 0;
+  z-index: 2;
+  @media screen and(max-width: $breakpoint-767) {
+    display: none;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  &__logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 220px;
+  }
+
+  &__logo-link {
+    color: $secondary-color;
+  }
+}
+
+.header.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }

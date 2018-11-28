@@ -1,0 +1,81 @@
+.banner {
+  background: url('/images/banner-pc.png') no-repeat;
+  background-size: cover;
+  margin-bottom: 115px;
+  @media screen and(max-width: $breakpoint-767) {
+    background: url('/images/banner-sp.png') no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 200px 0 0;
+    position: relative;
+    height: 750px;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 100px 15px 0;
+      height: 570px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    z-index: 2;
+    text-align: right;
+    @media screen and(max-width: $breakpoint-767) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__title-text {
+    font-size: $fontsize-largest;
+    color: $banner-text-color;
+    font-weight: 700;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-medium;
+    }
+  }
+
+  &__subtitle-text {
+    font-size: $fontsize-medium;
+    color: $white;
+    font-weight: 700;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+    }
+  }
+
+  &__phones {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 46%;
+      bottom: -55px;
+    }
+  }
+
+  &__phones-image {
+    @media screen and(max-width: $breakpoint-767) {
+      width: 100%;
+    }
+  }
+
+  &__logo-image {
+    @media screen and(max-width: $breakpoint-767) {
+      width: 80%;
+    }
+  }
+}

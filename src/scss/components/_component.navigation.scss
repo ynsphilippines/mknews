@@ -1,0 +1,33 @@
+.navigation {
+  display: inline-block;
+  width: 980px;
+  vertical-align: middle;
+
+  &__list {
+    text-align: right;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  &__link {
+    font-size: $fontsize-smaller;
+    color: #505150;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.navigation__link.navigation__link--active {
+  color: $primary-color;
+  font-weight: 700;
+}
