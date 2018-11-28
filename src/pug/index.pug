@@ -185,26 +185,26 @@ html(lang="ja")
                 label.inquiries__form-label ご法人名・屋号  
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box(type="text")
+                  input.inquiries__form-input-box#companyName(type="text")
                   span.inquiries__form-error error
               
               .inquiries__form-list
                 label.inquiries__form-label 部署名   
                 .inquiries__form-input
-                  input.inquiries__form-input-box(type="text")
+                  input.inquiries__form-input-box#departmentName(type="text")
               
               .inquiries__form-list.inquiries__form-list--error
                 label.inquiries__form-label ご担当者名
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box(type="text")
+                  input.inquiries__form-input-box#personInCharge(type="text")
                   span.inquiries__form-error error
 
               .inquiries__form-list
                 label.inquiries__form-label メールアドレス
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box(type="text")
+                  input.inquiries__form-input-box#mailAddress(type="text")
 
               .inquiries__form-list
                 label.inquiries__form-label 概要 
@@ -216,7 +216,7 @@ html(lang="ja")
                 label.inquiries__form-label 内容 
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  textarea.inquiries__form-textarea
+                  textarea.inquiries__form-textarea#contents
 
               .inquiries__form-list
                 label.inquiries__form-label 

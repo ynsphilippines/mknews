@@ -476,7 +476,7 @@ select {
     .header {
       display: none; } }
   .header__content {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto; }
   .header__logo {
     display: inline-block;

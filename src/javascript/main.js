@@ -13,6 +13,7 @@ $(function() {
     handleScrollToTop();
     handleShowNavigationModal();
     handleShowModalCustomizedFlow();
+    handleGetContentForSideNotification();
 });
 
 
@@ -147,6 +148,7 @@ function handleShowNavigationModal() {
 // END handleShowNavigationModal
 
 
+// SHOW MODAL IN CUSTOMIZED FLOW SECTION MOBILE VIEW
 function handleShowModalCustomizedFlow() {
     $('.customized-flow__item').on('click', function() {
         $('.modal__customized-content').html('');
@@ -161,4 +163,87 @@ function handleShowModalCustomizedFlow() {
         $('.modal').fadeOut(500).css('z-index','initial');
         $('.modal__customized-flow').hide();
     })
+}
+// END handleShowModalCustomizedFlow
+
+function htmlEntities(string) {
+    return String(string).
+        replace(/&/g, '&amp;').
+        replace(/</g, '&lt;').
+        replace(/>/g, '&gt;').
+        replace(/"/g, '&quot;').
+        replace(/\n/g, '<br>');
+}
+
+
+function handleGetContentForSideNotification() {
+    $('.button--submit').on('click', function() {
+        let mailContent = {
+            companyName       : htmlEntities($('#companyName').val()),
+            departmentName    : htmlEntities($('#departmentName').val()),
+            personInCharge    : htmlEntities($('#personInCharge').val()),
+            mailAddress       : htmlEntities($('#mailAddress').val()),
+            inquiriesOverview : htmlEntities($('#inquiries-overview').text()),
+            contents          : htmlEntities($('#contents').val())
+        };
+
+        handleSendMessage( mailContent );
+    });
+}
+
+
+function handleSendMessage( value ) {
+    let validationStatus;
+    const emailSender      = 'sendonly@y-n-s.co.jp';
+    const emailCarbonCopy  = 'takasago@y-n-s.co.jp, kaihara@y-n-s.co.jp, hirasawa@y-n-s.co.jp'; 
+    const emailHost        = 'smtp.elasticemail.com'; 
+    const emailAddress     = 'third.party.service.yns@gmail.com'; 
+    const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
+
+    Email.send(
+        emailSender,
+        `${value['mailAddress']}` + ',' + `${emailCarbonCopy}`,
+        value['companyName'],
+        value['contents'],
+        emailHost,
+        emailAddress,
+        password,
+        function done(message) {
+            if ( message === "OK" ) {
+                validationStatus = true;
+            } else {
+                validationStatus = false;
+            }
+
+            handleSideNotification( validationStatus ); // Call function to show sidebar notification
+        }
+    );
+}
+
+
+function handleSideNotification( validationStatus ) {
+
+    if ( validationStatus === true ) {
+        toastr.success("You've Successfully Send Your Message!");
+    } else {
+        toastr.error("Failed!")
+    }
+    
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 }
