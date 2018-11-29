@@ -15,6 +15,7 @@ $(function() {
     handleShowModalCustomizedFlow( windowView );
     handleFormValidation();
     handleGetFormInputValue();
+    handleClickButtonInBanner();
 });
 
 
@@ -102,6 +103,15 @@ function handleNavigationItem( windowView ) {
             }, 1000);
         });
     } 
+}
+
+function handleClickButtonInBanner() {
+    let goToSection = $('#js-customized').offset().top - 60;
+    $('.button--banner').on('click', function() {
+        $("html, body").animate({
+            scrollTop: goToSection
+        }, 1000); 
+    })
 }
 
 function handleToActivateNavigation( navigations ) {
