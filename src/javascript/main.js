@@ -14,6 +14,7 @@ $(function() {
     handleShowNavigationModal();
     handleShowModalCustomizedFlow( windowView );
     handleFormValidation();
+    handleGetFormInputValue();
 });
 
 
@@ -21,12 +22,13 @@ $(function() {
 function handleSelectBox() {
     const overView = [
         { value: '選択してください'},
-        { value: '1'},
-        { value: '2'}
+        { value: 'カスタマイズのご相談'},
+        { value: '取材のご依頼'},
+        { value: 'その他お問い合わせ'}
     ];
     
     overView.forEach((value, key) => {
-        $('#inquiries-overview').append('<option value="'+ key +'">' + value['value'] + '</option>');
+        $('#inquiries-overview').append('<option value="'+ key +'" id="'+ key +'">' + value['value'] + '</option>');
     });
 }
 // END handleSelectBox
@@ -329,7 +331,7 @@ function handleFormValidation() {
     });
 
     // TITLE / INQURIES OVERVIEW
-    $('#inquiries-overview').on('change', function() {
+    $('#inquiries-overview').on('change focus', function() {
         let errorMessage = "";
         if ( +$(this).val() === 0 ) {
             $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
@@ -367,7 +369,6 @@ function handleFormValidation() {
             errorMessage = formValidationMessage[0]['content']['required'];
             $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             contentText = false;
-            console.log(contentText);
         }
         $(this).next('.inquiries__form-error').text(errorMessage);
     });
@@ -376,7 +377,6 @@ function handleFormValidation() {
         if ( companyName === true  && departmentName === true && personInCharge === true && 
             mailAddress === true && summaryTitle === true && contentText === true ) {
            $('.button.button--submit').removeAttr('disabled');
-           handleGetFormInputValue();
        } else {
         $('.button.button--submit').attr('disabled','disabled');
        }
@@ -390,7 +390,7 @@ function handleGetFormInputValue() {
             departmentName    : htmlEntities($('#departmentName').val()),
             personInCharge    : htmlEntities($('#personInCharge').val()),
             mailAddress       : htmlEntities($('#mailAddress').val()),
-            inquiriesOverview : htmlEntities($('#inquiries-overview').text()),
+            inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
             contents          : htmlEntities($('#contents').val())
         };
 
@@ -402,22 +402,28 @@ function handleGetFormInputValue() {
 function handleSendMessage( value ) {
     let validationStatus;
     const emailSender      = 'sendonly@y-n-s.co.jp';
-    const emailCarbonCopy  = 'takasago@y-n-s.co.jp, kaihara@y-n-s.co.jp, hirasawa@y-n-s.co.jp'; 
-    const emailHost        = 'smtp.elasticemail.com'; 
+    const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
+    // const emailHost        = 'smtp.elasticemail.com'; 
+    // const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
     const emailAddress     = 'third.party.service.yns@gmail.com'; 
-    const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
+
+    // FOR TESTING
+    const emailHost        = 'smtp.gmail.com'; 
+    const password         = 'ynsadmin1234'; 
 
     Email.send(
         emailSender,
-        `${value['mailAddress']}` + ',' + `${emailCarbonCopy}`,
-        value['companyName'],
-        value['contents'],
+        emailReceiver,
+        value['inquiriesOverview'],
+        `${'ご法人名・屋号: ' + value['companyName']}` + '<br>' + '部署名: ' + `${value['departmentName']}` + '<br>' + `${'ご担当者名 : ' + value['personInCharge']}` + '<br>' + 'メールアドレス : ' + `${value['mailAddress']}` + '<br>' + '内容 : ' + '<br>' + `${value['contents']}`,
         emailHost,
         emailAddress,
         password,
         function done(message) {
             if ( message === "OK" ) {
                 validationStatus = true;
+                $('input, textarea').val('');
+                $('select').val(0);
             } else {
                 validationStatus = false;
             }
@@ -444,9 +450,9 @@ function handleSideNotification( validationStatus ) {
         "positionClass": "toast-top-right",
         "preventDuplicates": false,
         "onclick": null,
-        "showDuration": "300",
+        "showDuration": "3000",
         "hideDuration": "1000",
-        "timeOut": "100",
+        "timeOut": "1000",
         "extendedTimeOut": "1000",
         "showEasing": "swing",
         "hideEasing": "linear",
