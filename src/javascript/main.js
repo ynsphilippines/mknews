@@ -16,7 +16,7 @@ $(function() {
     handleFormValidation();
     handleGetFormInputValue();
     handleClickButtonInBanner();
-    handleClickButtonInCustomizationExample();
+    handleClickButtonInCustomizationExample( windowView );
 });
 
 
@@ -115,8 +115,15 @@ function handleClickButtonInBanner() {
     })
 }
 
-function handleClickButtonInCustomizationExample() {
-    let goToSection = $('#js-contactus').offset().top - 60;
+function handleClickButtonInCustomizationExample( windowView ) {
+    let goToSection;
+
+    if ( windowView === "PC" ) {
+        goToSection = $('#js-contactus').offset().top - 60;
+    } else {
+        goToSection = $('#js-contactus').offset().top
+    }
+
     $('.button--white').on('click', function() {
         $("html, body").animate({
             scrollTop: goToSection
