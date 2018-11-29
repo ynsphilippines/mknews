@@ -14,9 +14,9 @@
   }
 
   &__form-list {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     @media screen and(max-width: $breakpoint-767) {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   }
 
@@ -38,6 +38,7 @@
     width: 600px;
     vertical-align: middle;
     font-size: $fontsize-smaller;
+    position: relative;
     @media screen and(max-width: $breakpoint-767) {
       width: 100%;
     }
@@ -104,6 +105,15 @@
     font-size: $fontsize-smallest;
     color: $error-color;
     display: block;
+    position: absolute;
+    bottom: -22px;
+  }
+
+  &__reminder {
+    display: none;
+    font-size: $fontsize-smaller;
+    display: block;
+    padding-top: 30px;
   }
 }
 
@@ -112,14 +122,9 @@
     color: $error-color;
   }
 
-  .inquiries__form-input {
-    padding-top: 20px;
-    @media screen and(max-width: $breakpoint-767) {
-      padding-top: 0;
-    }
-  }
-
-  .inquiries__form-input-box {
+  .inquiries__form-input-box,
+  .inquiries__form-select-box,
+  .inquiries__form-textarea {
     border-color: $error-color;
   }
 }

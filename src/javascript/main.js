@@ -13,7 +13,7 @@ $(function() {
     handleScrollToTop();
     handleShowNavigationModal();
     handleShowModalCustomizedFlow();
-    handleGetContentForSideNotification();
+    handleFormValidation();
 });
 
 
@@ -174,9 +174,215 @@ function htmlEntities(string) {
         replace(/"/g, '&quot;').
         replace(/\n/g, '<br>');
 }
+function isHanKana(str){
+var reg = new RegExp(/^[ｦ-ﾟ]*$/);
+return reg.test(str);
+}
 
+function handleFormValidation() {
+    const formValidationMessage = [
+        {
+            companyName: { 
+                required     : "Company name is required",
+                minMaxLength : "Minimum of 1, Maximum of 100 characters only",
+                halfWidthKana : "Half width kana is not allowed"
+            },
+            departmentName: {
+                maxLength : "Maximum of 100 characters only",
+                halfWidthKana : "Half width kana is not allowed"
+            },
+            personInCharge: {
+                required     : "Person in charge is required",
+                minMaxLength : "Maximum of 100 characters only",
+                halfWidthKana : "Half width kana is not allowed"
+            },
+            mailAddress: {
+                required        : "Email Address is required",
+                emailValidation : "Email address format is invalid",
+                halfWidthKana : "Half width kana is not allowed"
+            },
+            summaryTitle: {
+                required : "Summary title is required"
+            },
+            content: {
+                required     : "Content is required",
+                minMaxLength : "Minimum of 2 and maximum of 2000 characters only",
+                halfWidthKana : "Half width kana is not allowed"
+            }
+        }
+    ];
 
-function handleGetContentForSideNotification() {
+    let companyName = false;
+    let departmentName = false;
+    let personInCharge = false;
+    let mailAddress = false;
+    let summaryTitle = false;
+    let contentText = false;
+
+    $('.button.button--submit').attr('disabled', 'disabled');
+
+    // COMPANY NAME
+    $('#companyName').on('keyup', function(e) {
+        let errorMessage = "";
+        let halfWidthKana = /[\uFF00-\uFFEF]/g;
+        if ( $(this).val().length !== 0 ) {
+            if( !halfWidthKana.test($(this).val())) { 
+                if ( $(this).val().length > 100 ) {
+                    errorMessage = formValidationMessage[0]['companyName']['minMaxLength'];
+                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                    companyName = false;
+                } else {
+                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+                    errorMessage = '';
+                    companyName = true;
+                }
+            } else {
+                errorMessage = formValidationMessage[0]['companyName']['halfWidthKana'];
+                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                companyName = false;
+            }
+        } else {
+            errorMessage = formValidationMessage[0]['companyName']['required'];
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            companyName = false;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);    
+    });
+
+    // DEPARTMENT NAME
+    $('#departmentName').on('keyup', function() {
+        let errorMessage = "";
+        let halfWidthKana = /[\uFF00-\uFFEF]/g;
+        if( !halfWidthKana.test($(this).val())) { 
+            if ( $(this).val().length > 100 ) {
+                    errorMessage = formValidationMessage[0]['departmentName']['maxLength'];
+                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                    departmentName = false;
+            } else {
+                $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+                errorMessage = "";
+                departmentName = true;
+            }
+        } else {
+            errorMessage = formValidationMessage[0]['departmentName']['halfWidthKana'];
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            departmentName = false;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);
+    });
+
+    // PERSON IN CHARGE
+    $('#personInCharge').on('keyup', function() {
+        let errorMessage = "";
+        let halfWidthKana = /[\uFF00-\uFFEF]/g;
+        if ( $(this).val().length !== 0 ) {
+            if( !halfWidthKana.test($(this).val())) { 
+                if ( $(this).val().length > 100 ) {
+                    errorMessage = formValidationMessage[0]['personInCharge']['minMaxLength'];
+                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                    personInCharge = false;
+                } else {
+                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+                    errorMessage = '';
+                    personInCharge = true;
+                }
+            } else {
+                errorMessage = formValidationMessage[0]['personInCharge']['halfWidthKana'];
+                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                personInCharge = false;
+            }
+        } else {
+            errorMessage = formValidationMessage[0]['personInCharge']['required'];
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            personInCharge = false;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);
+    });
+
+    // EMAIL ADDRESS
+    $('#mailAddress').on('keyup', function(e) {
+        emailAddress = $(this);
+        let emailRegex = /^[^./@]+[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        let halfWidthKana = /[\uFF00-\uFFEF]/g;
+        let errorMessage = "";
+
+        if ( $(this).val().length !== 0 ) {
+            if( !halfWidthKana.test($(this).val())) { 
+                if( !emailRegex.test(emailAddress.val())) { 
+                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                    errorMessage = formValidationMessage[0]['mailAddress']['emailValidation'];
+                    mailAddress = false;
+                } else {
+                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+                    errorMessage = "";
+                    mailAddress = true;
+                }
+            } else {
+                errorMessage = formValidationMessage[0]['mailAddress']['halfWidthKana'];
+                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                mailAddress = false;
+            }
+        } else {
+            errorMessage = formValidationMessage[0]['mailAddress']['required'];
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            mailAddress = false;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);
+    });
+
+    // TITLE / INQURIES OVERVIEW
+    $('#inquiries-overview').on('change', function() {
+        let errorMessage = "";
+        if ( +$(this).val() === 0 ) {
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            errorMessage = formValidationMessage[0]['summaryTitle']['required'];
+            summaryTitle = false;
+        } else {
+            $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+            errorMessage = "";
+            summaryTitle = true;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);
+    });
+
+    // CONTENTS ( BODY )
+    $('#contents').on('keyup', function() {
+        let errorMessage = "";
+        let halfWidthKana = /[\uFF00-\uFFEF]/g;
+        if ( $(this).val().length > 0 ) {
+            if( !halfWidthKana.test($(this).val())) {
+                if ( $(this).val().length > 2000 ) {
+                    errorMessage = formValidationMessage[0]['content']['minMaxLength'];
+                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                    contentText = false;
+                } else {
+                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
+                    errorMessage = "";
+                    contentText = true;
+                }
+            } else {
+                errorMessage = formValidationMessage[0]['content']['halfWidthKana'];
+                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+                contentText = false;
+            }
+        } else {
+            errorMessage = formValidationMessage[0]['content']['required'];
+            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
+            contentText = false;
+        }
+        $(this).next('.inquiries__form-error').text(errorMessage);
+    });
+
+    $('input, textarea, select').on('keyup change', function() {
+        if ( companyName === true  && departmentName === true && personInCharge === true && 
+            mailAddress === true && summaryTitle === true && contentText === true ) {
+           $('.button.button--submit').removeAttr('disabled');
+           handleGetFormInputValue();
+       }
+    });
+}
+
+function handleGetFormInputValue() {
     $('.button--submit').on('click', function() {
         let mailContent = {
             companyName       : htmlEntities($('#companyName').val()),
@@ -239,7 +445,7 @@ function handleSideNotification( validationStatus ) {
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",
-        "timeOut": "5000",
+        "timeOut": "100",
         "extendedTimeOut": "1000",
         "showEasing": "swing",
         "hideEasing": "linear",

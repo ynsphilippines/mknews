@@ -72,3 +72,9 @@ textarea {
 select {
   appearance: none;
 }
+
+button.button--submit[disabled] {
+  background: #ccc;
+  pointer-events: none;
+  border: none;
+}
