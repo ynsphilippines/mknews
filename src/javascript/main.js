@@ -385,13 +385,18 @@ function handleFormValidation() {
 
 function handleGetFormInputValue() {
     $('.button--submit').on('click', function() {
+        let getDateTime = new Date();
+        let dateTimeFormat = getDateTime.getFullYear() + "-" + (getDateTime.getMonth()+1) + "-" + getDateTime.getDate() + " " + getDateTime.getHours() + ":" + getDateTime.getMinutes();
+        let getUrl = window.location.href; 
         let mailContent = {
             companyName       : htmlEntities($('#companyName').val()),
             departmentName    : htmlEntities($('#departmentName').val()),
             personInCharge    : htmlEntities($('#personInCharge').val()),
             mailAddress       : htmlEntities($('#mailAddress').val()),
             inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
-            contents          : htmlEntities($('#contents').val())
+            contents          : htmlEntities($('#contents').val()),
+            dateTime          : htmlEntities(dateTimeFormat),
+            websiteUrl        : htmlEntities(getUrl)
         };
 
         handleSendMessage( mailContent );
@@ -414,8 +419,8 @@ function handleSendMessage( value ) {
     Email.send(
         emailSender,
         emailReceiver,
-        value['inquiriesOverview'],
-        `${'ご法人名・屋号: ' + value['companyName']}` + '<br>' + '部署名: ' + `${value['departmentName']}` + '<br>' + `${'ご担当者名 : ' + value['personInCharge']}` + '<br>' + 'メールアドレス : ' + `${value['mailAddress']}` + '<br>' + '内容 : ' + '<br>' + `${value['contents']}`,
+        `${value['companyName']}`+ ' - ' +` ${value['inquiriesOverview']}`,
+        `${value['departmentName']}` + '-' + `${value['personInCharge']}` + '<br>' + `${value['mailAddress']}` + '<br>' + `${value['contents']}` + '<br><br>' + `${value['dateTime']}` + '<br>' + `${value['websiteUrl']}`,
         emailHost,
         emailAddress,
         password,
