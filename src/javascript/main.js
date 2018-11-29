@@ -16,6 +16,7 @@ $(function() {
     handleFormValidation();
     handleGetFormInputValue();
     handleClickButtonInBanner();
+    handleClickButtonInCustomizationExample();
 });
 
 
@@ -108,6 +109,15 @@ function handleNavigationItem( windowView ) {
 function handleClickButtonInBanner() {
     let goToSection = $('#js-customized').offset().top - 60;
     $('.button--banner').on('click', function() {
+        $("html, body").animate({
+            scrollTop: goToSection
+        }, 1000); 
+    })
+}
+
+function handleClickButtonInCustomizationExample() {
+    let goToSection = $('#js-contactus').offset().top - 60;
+    $('.button--white').on('click', function() {
         $("html, body").animate({
             scrollTop: goToSection
         }, 1000); 
