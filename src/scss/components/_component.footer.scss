@@ -43,7 +43,7 @@
   }
 
   &__icon {
-    width: 100%; 
+    width: 100%;
   }
 
   &__menu-icon {
@@ -81,7 +81,7 @@
     background: #4267b2;
     font-size: $fontsize-smallest;
     color: $white;
-    font-weight: 700;
+    font-weight: bold;
     padding: 5px 18px;
     display: inline-block;
     border-radius: 5px;
@@ -127,7 +127,7 @@
       width: 13px;
     }
   }
-  
+
   &__social-icon-copy {
     @media screen and(max-width: $breakpoint-767) {
       width: 13px;
@@ -163,7 +163,7 @@
 
   &__contact-content {
     text-align: left;
-    font-weight: 700;
+    font-weight: bold;
     display: block;
     font-size: $fontsize-small;
     color: #505150;

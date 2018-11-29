@@ -23,12 +23,12 @@
     color: $primary-color;
     padding: 10px;
     position: relative;
-    font-weight: 700;
+    font-weight: bold;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-medium;
-    } 
+    }
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       left: -25px;
@@ -41,7 +41,7 @@
       height: 100%;
     }
 
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       right: -25px;
@@ -57,7 +57,7 @@
   }
 }
 
-.section.section--customized {
+.section--customized {
   background: $tertiary-color;
 
   .section__content {
@@ -66,8 +66,8 @@
 
   .section__title-text {
     color: $white;
-    
-    &:before {
+
+    &::before {
       content: '';
       position: absolute;
       left: -25px;
@@ -79,8 +79,8 @@
       width: 10px;
       height: 100%;
     }
-  
-    &:after {
+
+    &::after {
       content: '';
       position: absolute;
       right: -25px;

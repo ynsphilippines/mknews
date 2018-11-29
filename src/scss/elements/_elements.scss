@@ -2,7 +2,6 @@
   line-height: 1.5em;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
 }
 
 html {
@@ -47,6 +46,10 @@ a {
   }
 }
 
+select {
+  appearance: none;
+}
+
 button,
 input,
 optgroup,
@@ -67,10 +70,6 @@ textarea {
   &:focus {
     outline: none;
   }
-}
-
-select {
-  appearance: none;
 }
 
 button.button--submit[disabled] {

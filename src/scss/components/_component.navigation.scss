@@ -15,7 +15,7 @@
       margin-right: 0;
     }
   }
-  
+
   &__link {
     font-size: $fontsize-smaller;
     color: #505150;
@@ -29,5 +29,5 @@
 
 .navigation__link.navigation__link--active {
   color: $primary-color;
-  font-weight: 700;
+  font-weight: bold;
 }

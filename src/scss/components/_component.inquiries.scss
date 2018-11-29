@@ -9,7 +9,7 @@
     color: $secondary-color;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smaller;
-      font-weight: 700;
+      font-weight: bold;
     }
   }
 
@@ -28,7 +28,7 @@
     vertical-align: middle;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smallest;
-      font-weight: 700;
+      font-weight: bold;
       margin-bottom: 15px;
     }
   }
@@ -60,7 +60,7 @@
     display: inline-block;
     margin-left: 7px;
     color: $error-color;
-    font-weight: 700;
+    font-weight: bold;
   }
 
   &__form-select-box {
@@ -96,7 +96,6 @@
     padding-top: 20px;
     text-align: center;
     width: 600px;
-    text-align: center;
     @media screen and(max-width: $breakpoint-767) {
       width: 100%;
     }
@@ -117,7 +116,6 @@
   }
 
   &__reminder {
-    display: none;
     font-size: $fontsize-smaller;
     display: block;
     padding-top: 30px;
