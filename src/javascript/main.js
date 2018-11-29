@@ -367,15 +367,18 @@ function handleFormValidation() {
             errorMessage = formValidationMessage[0]['content']['required'];
             $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             contentText = false;
+            console.log(contentText);
         }
         $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
-    $('input, textarea, select').on('keyup change', function() {
+    $('input, select, textarea').on('keyup change', function() {
         if ( companyName === true  && departmentName === true && personInCharge === true && 
             mailAddress === true && summaryTitle === true && contentText === true ) {
            $('.button.button--submit').removeAttr('disabled');
            handleGetFormInputValue();
+       } else {
+        $('.button.button--submit').attr('disabled','disabled');
        }
     });
 }
