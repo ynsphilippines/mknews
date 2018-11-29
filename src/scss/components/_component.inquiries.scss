@@ -16,7 +16,7 @@
   &__form-list {
     margin-bottom: 35px;
     @media screen and(max-width: $breakpoint-767) {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
   }
 
@@ -70,12 +70,13 @@
     height: 50px;
     width: 100%;
     background: url('/images/select-arrow-down.png') no-repeat;
-    background-size: 15px;
+    background-size: 25px;
     background-position: right 15px center;
     color: #5e5e5e;
     @media screen and(max-width: $breakpoint-767) {
       padding: 10px;
       font-size: $fontsize-smaller;
+      background-size: 20px;
       height: 40px;
     }
   }
@@ -107,6 +108,12 @@
     display: block;
     position: absolute;
     bottom: -22px;
+    @media screen and(max-width: $breakpoint-767) {
+      position: relative;
+      bottom: 0;
+      display: block;
+      padding-top: 5px;
+    }
   }
 
   &__reminder {

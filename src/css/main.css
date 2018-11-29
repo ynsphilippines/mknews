@@ -681,21 +681,29 @@ button.button--submit[disabled] {
     .section__title-text {
       font-size: 2.4rem; } }
   .section__title-text:before {
-    content: '[';
+    content: '';
     position: absolute;
     left: -25px;
-    top: 8px;
-    font-size: 55px;
+    top: 0;
     vertical-align: middle;
-    font-weight: initial; }
+    background: url("/images/bracket-left-blue.png") no-repeat;
+    background-size: 20px;
+    background-position: left;
+    width: 10px;
+    height: 100%; }
   .section__title-text:after {
-    content: ']';
+    content: '';
     position: absolute;
     right: -25px;
-    top: 8px;
-    font-size: 55px;
+    top: 0;
     vertical-align: middle;
-    font-weight: initial; }
+    background: url("/images/bracket-left-blue.png") no-repeat;
+    background-size: 20px;
+    background-position: left;
+    width: 10px;
+    height: 100%;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
 
 .section.section--customized {
   background: #1774b8; }
@@ -703,6 +711,30 @@ button.button--submit[disabled] {
     padding: 40px 0; }
   .section.section--customized .section__title-text {
     color: #fff; }
+    .section.section--customized .section__title-text:before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url("/images/bracket-left-white.png") no-repeat;
+      background-size: 18px;
+      background-position: left;
+      width: 10px;
+      height: 100%; }
+    .section.section--customized .section__title-text:after {
+      content: '';
+      position: absolute;
+      right: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url("/images/bracket-left-white.png") no-repeat;
+      background-size: 18px;
+      background-position: left;
+      width: 10px;
+      height: 100%;
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
 
 .section.section--customization-flow {
   border-bottom: 2px solid #1071b9; }
@@ -870,7 +902,7 @@ button.button--submit[disabled] {
     margin-bottom: 35px; }
     @media screen and (max-width: 767px) {
       .inquiries__form-list {
-        margin-bottom: 30px; } }
+        margin-bottom: 10px; } }
   .inquiries__form-label {
     font-size: 1.6rem;
     color: #5e5e5e;
@@ -913,13 +945,14 @@ button.button--submit[disabled] {
     height: 50px;
     width: 100%;
     background: url("/images/select-arrow-down.png") no-repeat;
-    background-size: 15px;
+    background-size: 25px;
     background-position: right 15px center;
     color: #5e5e5e; }
     @media screen and (max-width: 767px) {
       .inquiries__form-select-box {
         padding: 10px;
         font-size: 1.6rem;
+        background-size: 20px;
         height: 40px; } }
   .inquiries__form-textarea {
     border: 1px solid #1071b9;
@@ -944,6 +977,12 @@ button.button--submit[disabled] {
     display: block;
     position: absolute;
     bottom: -22px; }
+    @media screen and (max-width: 767px) {
+      .inquiries__form-error {
+        position: relative;
+        bottom: 0;
+        display: block;
+        padding-top: 5px; } }
   .inquiries__reminder {
     display: none;
     font-size: 1.6rem;
@@ -959,7 +998,16 @@ button.button--submit[disabled] {
   border-color: #ed2024; }
 
 .footer {
-  position: relative; }
+  position: relative;
+  border-top: 2px solid #686868; }
+  .footer__container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 0; }
+    @media screen and (max-width: 767px) {
+      .footer__container {
+        padding: 50px 0; } }
   .footer__icons {
     position: absolute;
     bottom: 100px;
@@ -1007,6 +1055,87 @@ button.button--submit[disabled] {
         width: 55px;
         right: 15px;
         height: 55px; } }
+  .footer__social-media {
+    margin-bottom: 30px; }
+  .footer__social-button {
+    background: #4267b2;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 18px;
+    display: inline-block;
+    border-radius: 5px; }
+    @media screen and (max-width: 767px) {
+      .footer__social-button {
+        font-size: 1rem;
+        padding: 5px; } }
+  .footer__social-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px; }
+    @media screen and (max-width: 767px) {
+      .footer__social-item {
+        margin-right: 3px; } }
+  .footer__social-icon {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; }
+    @media screen and (max-width: 767px) {
+      .footer__social-icon {
+        width: 15px; } }
+  .footer__social-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; }
+  .footer__social-number {
+    display: inline-block;
+    vertical-align: middle; }
+  .footer__social-icon-twitter {
+    width: 18px; }
+    @media screen and (max-width: 767px) {
+      .footer__social-icon-twitter {
+        width: 13px; } }
+  @media screen and (max-width: 767px) {
+    .footer__social-icon-copy {
+      width: 13px; } }
+  .footer__title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 10px; }
+    @media screen and (max-width: 767px) {
+      .footer__title {
+        font-size: 1.4rem;
+        text-align: center;
+        max-width: 295px;
+        margin: 0 auto 30px;
+        padding: 0; } }
+  .footer__logo {
+    display: block;
+    width: 235px;
+    margin: 0 auto 30px; }
+    @media screen and (max-width: 767px) {
+      .footer__logo {
+        width: 195px; } }
+  .footer__logo-img {
+    width: 100%; }
+  .footer__contact-content {
+    text-align: left;
+    font-weight: 700;
+    display: block;
+    font-size: 1.8rem;
+    color: #505150; }
+    @media screen and (max-width: 767px) {
+      .footer__contact-content {
+        font-size: 1.4rem; } }
+  .footer__contact-info {
+    padding: 10px; }
+    @media screen and (max-width: 767px) {
+      .footer__contact-info {
+        max-width: 295px;
+        margin: 0 auto;
+        padding: 0; } }
 
 .footer__icon-menu--close {
   display: none; }

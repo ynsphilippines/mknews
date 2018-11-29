@@ -1,5 +1,16 @@
 .footer {
   position: relative;
+  border-top: 2px solid #686868;
+
+  &__container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 0;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 50px 0;
+    }
+  }
 
   &__icons {
     position: absolute;
@@ -59,6 +70,114 @@
       width: 55px;
       right: 15px;
       height: 55px;
+    }
+  }
+
+  &__social-media {
+    margin-bottom: 30px;
+  }
+
+  &__social-button {
+    background: #4267b2;
+    font-size: $fontsize-smallest;
+    color: $white;
+    font-weight: 700;
+    padding: 5px 18px;
+    display: inline-block;
+    border-radius: 5px;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: 1rem;
+      padding: 5px;
+    }
+  }
+
+  &__social-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    @media screen and(max-width: $breakpoint-767) {
+      margin-right: 3px;
+    }
+  }
+
+  &__social-icon {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 15px;
+    }
+  }
+
+  &__social-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  &__social-number {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__social-icon-twitter {
+    width: 18px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 13px;
+    }
+  }
+  
+  &__social-icon-copy {
+    @media screen and(max-width: $breakpoint-767) {
+      width: 13px;
+    }
+  }
+
+  &__title {
+    font-size: $fontsize-medium;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 10px;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+      text-align: center;
+      max-width: 295px;
+      margin: 0 auto 30px;
+      padding: 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 235px;
+    margin: 0 auto 30px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 195px;
+    }
+  }
+
+  &__logo-img {
+    width: 100%;
+  }
+
+  &__contact-content {
+    text-align: left;
+    font-weight: 700;
+    display: block;
+    font-size: $fontsize-small;
+    color: #505150;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+    }
+  }
+
+  &__contact-info {
+    padding: 10px;
+    @media screen and(max-width: $breakpoint-767) {
+      max-width: 295px;
+      margin: 0 auto;
+      padding: 0;
     }
   }
 }
