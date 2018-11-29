@@ -401,7 +401,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   min-width: 1200px; }
   @media screen and (max-width: 767px) {
     body {
@@ -794,6 +794,8 @@ button.button--submit[disabled] {
   margin: 0 auto; }
   .customized-flow__list {
     margin-bottom: 70px; }
+    .customized-flow__list:last-child {
+      margin-bottom: 0; }
     @media screen and (max-width: 767px) {
       .customized-flow__list {
         width: 57%;
@@ -847,7 +849,7 @@ button.button--submit[disabled] {
   .customized-flow__description {
     font-size: 1.8rem;
     color: #505150;
-    font-weight: 500; }
+    font-weight: 600; }
     @media screen and (max-width: 767px) {
       .customized-flow__description {
         display: none; } }

@@ -4,6 +4,11 @@
 
   &__list {
     margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     @media screen and(max-width: $breakpoint-767) {
       width: 57%;
       display: block;
@@ -70,7 +75,7 @@
   &__description {
     font-size: $fontsize-small;
     color: #505150;
-    font-weight: 500;
+    font-weight: 600;
     @media screen and(max-width: $breakpoint-767) {
       display: none;
     }
