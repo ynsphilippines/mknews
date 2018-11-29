@@ -6,7 +6,7 @@
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    padding: 100px 0;
+    padding: 120px 0 80px;
     @media screen and(max-width: $breakpoint-767) {
       padding: 50px 0;
     }
@@ -139,6 +139,8 @@
     margin-bottom: 30px;
     text-align: left;
     padding: 0 10px;
+    color: #505150;
+    font-weight: bold;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smallest;
       text-align: center;
@@ -179,6 +181,14 @@
       margin: 0 auto;
       padding: 0;
     }
+  }
+
+  &__social-button-twitter {
+    background: #00acec;
+  }
+
+  &__social-button-icon {
+    background: #1774b8;
   }
 }
 

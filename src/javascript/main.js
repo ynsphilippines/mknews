@@ -17,6 +17,7 @@ $(function() {
     handleGetFormInputValue();
     handleClickButtonInBanner();
     handleClickButtonInCustomizationExample( windowView );
+    handleGetyear();
 });
 
 
@@ -492,4 +493,10 @@ function handleSideNotification( validationStatus ) {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     }
+}
+
+function handleGetyear() {
+    let getDate = new Date();
+    let getYear = getDate.getFullYear('YYYY');
+    $('#js-year').text(" "+getYear);
 }

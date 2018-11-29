@@ -475,7 +475,7 @@ button.button--submit[disabled] {
 
 .header {
   background: #fff;
-  box-shadow: 0 0 10px #dcdcdc;
+  box-shadow: 0 4px 15px #dcdcdc;
   padding: 8px 0;
   width: 100%;
   position: absolute;
@@ -892,11 +892,11 @@ button.button--submit[disabled] {
     display: block;
     margin-bottom: 50px;
     font-size: 1.8rem;
-    color: #5e5e5e; }
+    color: #5e5e5e;
+    font-weight: bold; }
     @media screen and (max-width: 767px) {
       .inquiries__note-text {
-        font-size: 1.6rem;
-        font-weight: bold; } }
+        font-size: 1.6rem; } }
   .inquiries__form-list {
     margin-bottom: 35px; }
     @media screen and (max-width: 767px) {
@@ -907,11 +907,11 @@ button.button--submit[disabled] {
     color: #5e5e5e;
     display: inline-block;
     width: 220px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    font-weight: bold; }
     @media screen and (max-width: 767px) {
       .inquiries__form-label {
         font-size: 1.4rem;
-        font-weight: bold;
         margin-bottom: 15px; } }
   .inquiries__form-input {
     display: inline-block;
@@ -1001,7 +1001,7 @@ button.button--submit[disabled] {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    padding: 100px 0; }
+    padding: 120px 0 80px; }
     @media screen and (max-width: 767px) {
       .footer__container {
         padding: 50px 0; } }
@@ -1100,7 +1100,9 @@ button.button--submit[disabled] {
     font-size: 2.4rem;
     margin-bottom: 30px;
     text-align: left;
-    padding: 0 10px; }
+    padding: 0 10px;
+    color: #505150;
+    font-weight: bold; }
     @media screen and (max-width: 767px) {
       .footer__title {
         font-size: 1.4rem;
@@ -1133,6 +1135,10 @@ button.button--submit[disabled] {
         max-width: 295px;
         margin: 0 auto;
         padding: 0; } }
+  .footer__social-button-twitter {
+    background: #00acec; }
+  .footer__social-button-icon {
+    background: #1774b8; }
 
 .footer__icon-menu--close {
   display: none; }

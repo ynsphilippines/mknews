@@ -7,9 +7,9 @@
     margin-bottom: 50px;
     font-size: $fontsize-small;
     color: $secondary-color;
+    font-weight: bold;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smaller;
-      font-weight: bold;
     }
   }
 
@@ -26,9 +26,9 @@
     display: inline-block;
     width: 220px;
     vertical-align: middle;
+    font-weight: bold;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smallest;
-      font-weight: bold;
       margin-bottom: 15px;
     }
   }
