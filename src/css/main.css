@@ -793,7 +793,8 @@ button.button--submit[disabled] {
     color: #505150; }
     @media screen and (max-width: 767px) {
       .pointers__paragraph-text {
-        font-size: 1.4rem; } }
+        font-size: 1.4rem;
+        display: inline; } }
 
 .customized-example__list {
   font-size: 0; }
