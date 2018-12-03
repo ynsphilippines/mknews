@@ -91,7 +91,6 @@ function handleNavigationItem( windowView ) {
         handleToActivateNavigation( navigationList );
         $(window).on('scroll', function() {
             handleToActivateNavigation( navigationList );
-            console.log('document:' + $(document).height() );
         })
 
     } else {
