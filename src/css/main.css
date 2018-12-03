@@ -477,7 +477,7 @@ button.button--submit[disabled] {
   overflow: hidden; }
 
 .footer__menu-icon--active {
-  padding: 11px 17px; }
+  padding: 11px 17px !important; }
   .footer__menu-icon--active .footer__icon-menu:first-child {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
             transform: rotate(-45deg) translate(-9px, 6px); }
