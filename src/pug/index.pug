@@ -193,45 +193,40 @@ html(lang="ja")
                 label.inquiries__form-label ご法人名・屋号  
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box#companyName(type="text")
-                  span.inquiries__form-error
+                  input.inquiries__form-input-box#companyName.js-required(type="text")
               
               .inquiries__form-list
                 label.inquiries__form-label 部署名   
                 .inquiries__form-input
                   input.inquiries__form-input-box#departmentName(type="text")
-                  span.inquiries__form-error
               
               .inquiries__form-list
                 label.inquiries__form-label ご担当者名
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box#personInCharge(type="text")
-                  span.inquiries__form-error
+                  input.inquiries__form-input-box#personInCharge.js-required(type="text")
 
               .inquiries__form-list
                 label.inquiries__form-label メールアドレス
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  input.inquiries__form-input-box#mailAddress(type="text")
-                  span.inquiries__form-error
+                  input.inquiries__form-input-box#mailAddress.js-required(type="text")
 
               .inquiries__form-list
                 label.inquiries__form-label 概要 
                   span.inquiries__form-required ※
                 .inquiries__form-input
                   select.inquiries__form-select-box#inquiries-overview
-                  span.inquiries__form-error
               
               .inquiries__form-list
                 label.inquiries__form-label 内容 
                   span.inquiries__form-required ※
                 .inquiries__form-input
-                  textarea.inquiries__form-textarea#contents
-                  span.inquiries__form-error
+                  textarea.inquiries__form-textarea.js-required#contents
 
               .inquiries__form-list.inquiries__form-list--button
                 .inquiries__button-wrapper
+                  input#inquiriesData(type="hidden")
                   button.button.button--submit(disabled="disabled")
                     span.button__text 送信する
                   noscript
