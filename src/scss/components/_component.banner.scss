@@ -52,8 +52,8 @@
     font-size: $fontsize-medium;
     color: $white;
     font-weight: bold;
-    display: block;
     @media screen and(max-width: $breakpoint-767) {
+      display: block;
       font-size: $fontsize-smallest;
     }
   }
