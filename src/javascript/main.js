@@ -31,7 +31,7 @@ function handleSelectBox() {
     ];
     
     overView.forEach((value, key) => {
-        $('#inquiries-overview').append('<option value="'+ key +'" id="'+ key +'">' + value['value'] + '</option>');
+        $('#inquiries-overview').append('<option value="'+ key +'" id="'+ key +'">' + htmlEntities(value['value']) + '</option>');
     });
 }
 // END handleSelectBox
