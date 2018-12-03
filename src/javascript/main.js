@@ -96,8 +96,8 @@ function handleNavigationItem( windowView ) {
     } else {
         $('.modal__navigation-item').on('click', function() {
             $(this).parents('.modal').fadeOut(500);
-            $('.footer__icon-menu--close').hide();
-            $('.footer__icon-menu').show();
+            $('.footer__menu-icon').removeClass('footer__menu-icon--active');
+            $('body').toggleClass('body-fixed');
             let getClickedMenu = $(this).data('index');
             let goToSection = +$('#'+navigationList[getClickedMenu]['sectionName']).offset().top;
             $("html, body").animate({
@@ -166,11 +166,13 @@ function handleShowNavigationModal() {
     $('.footer__menu-icon').on('click', function() {
         if ( $(this).hasClass('footer__menu-icon--active') == true ) {
             $('.modal').fadeOut(500);
+            $(this).removeClass('footer__menu-icon--active');
+            $('.modal__navigation').hide();
         } else {
             $('.modal').fadeIn(500);
+            $(this).addClass('footer__menu-icon--active');
+            $('.modal__navigation').show();
         }
-        $('.modal__navigation').toggle();
-        $(this).toggleClass('footer__menu-icon--active');
         $('body').toggleClass('body-fixed');
     });
 }
