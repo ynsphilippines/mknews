@@ -108,7 +108,7 @@ function handleNavigationItem( windowView ) {
 }
 
 function handleClickButtonInBanner() {
-    let goToSection = $('#js-customized').offset().top - 60;
+    let goToSection = $('#js-customized').offset().top - 40;
     $('.button--banner').on('click', function() {
         $("html, body").animate({
             scrollTop: goToSection
@@ -120,7 +120,7 @@ function handleClickButtonInCustomizationExample( windowView ) {
     let goToSection;
 
     if ( windowView === "PC" ) {
-        goToSection = $('#js-contactus').offset().top - 60;
+        goToSection = $('#js-contactus').offset().top - 40;
     } else {
         goToSection = $('#js-contactus').offset().top
     }
