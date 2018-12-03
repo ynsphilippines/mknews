@@ -5,3 +5,25 @@
 .toast-message {
   font-size: $fontsize-smaller;
 }
+
+.body-fixed {
+  overflow: hidden;
+}
+
+.footer__menu-icon--active {
+  padding: 11px 17px;
+
+  .footer__icon-menu {
+    &:first-child {
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:last-child {
+      transform: rotate(45deg) translate(-6px, -4px);
+    }
+  }
+}

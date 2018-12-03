@@ -473,6 +473,20 @@ button.button--submit[disabled] {
 .toast-message {
   font-size: 1.6rem; }
 
+.body-fixed {
+  overflow: hidden; }
+
+.footer__menu-icon--active {
+  padding: 11px 17px; }
+  .footer__menu-icon--active .footer__icon-menu:first-child {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px); }
+  .footer__menu-icon--active .footer__icon-menu:nth-child(2) {
+    opacity: 0; }
+  .footer__menu-icon--active .footer__icon-menu:last-child {
+    -webkit-transform: rotate(45deg) translate(-6px, -4px);
+            transform: rotate(45deg) translate(-6px, -4px); }
+
 .header {
   background: #fff;
   box-shadow: 0 4px 15px #dcdcdc;
@@ -1001,7 +1015,7 @@ button.button--submit[disabled] {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    padding: 120px 0 80px; }
+    padding: 120px 0 90px; }
     @media screen and (max-width: 767px) {
       .footer__container {
         padding: 50px 0; } }
@@ -1039,7 +1053,10 @@ button.button--submit[disabled] {
         width: 55px;
         height: 55px;
         position: fixed;
-        z-index: 2; } }
+        z-index: 2;
+        background: #1071b9;
+        border-radius: 50%;
+        padding: 12px 15px; } }
   .footer__scroll-top {
     position: absolute;
     right: 0;
@@ -1139,9 +1156,18 @@ button.button--submit[disabled] {
     background: #00acec; }
   .footer__social-button-icon {
     background: #1774b8; }
-
-.footer__icon-menu--close {
-  display: none; }
+  .footer__icon-menu {
+    display: none; }
+    @media screen and (max-width: 767px) {
+      .footer__icon-menu {
+        display: block;
+        margin: 5px 0;
+        width: 25px;
+        height: 4px;
+        background-color: #fff;
+        transition: 0.4s;
+        z-index: 2;
+        color: #fff; } }
 
 .modal {
   position: fixed;

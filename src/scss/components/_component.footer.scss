@@ -6,7 +6,7 @@
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    padding: 120px 0 80px;
+    padding: 120px 0 90px;
     @media screen and(max-width: $breakpoint-767) {
       padding: 50px 0;
     }
@@ -56,6 +56,9 @@
       height: 55px;
       position: fixed;
       z-index: 2;
+      background: $primary-color;
+      border-radius: 50%;
+      padding: 12px 15px;
     }
   }
 
@@ -190,8 +193,18 @@
   &__social-button-icon {
     background: #1774b8;
   }
-}
 
-.footer__icon-menu--close {
-  display: none;
+  &__icon-menu {
+    display: none;
+    @media screen and(max-width: $breakpoint-767) {
+      display: block;
+      margin: 5px 0;
+      width: 25px;
+      height: 4px;
+      background-color: $white;
+      transition: 0.4s;
+      z-index: 2;
+      color: $white;
+    }
+  }
 }

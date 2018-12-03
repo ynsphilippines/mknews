@@ -163,16 +163,15 @@ function handleScrollToTop() {
 
 // SHOW NAVIGATION MODAL IN MOBILE VIEW
 function handleShowNavigationModal() {
-    $('.footer__icon-menu').on('click', function() {
-        $('.modal').fadeIn(500);
-        $(this).hide();
-        $('.modal__navigation, .footer__icon-menu--close').show();
-    });
-
-    $('.footer__icon-menu--close').on('click', function() {
-        $(this).hide();
-        $('.footer__icon-menu').show();
-        $('.modal, .modal__navigation').fadeOut(500);
+    $('.footer__menu-icon').on('click', function() {
+        if ( $(this).hasClass('footer__menu-icon--active') == true ) {
+            $('.modal').fadeOut(500);
+        } else {
+            $('.modal').fadeIn(500);
+        }
+        $('.modal__navigation').toggle();
+        $(this).toggleClass('footer__menu-icon--active');
+        $('body').toggleClass('body-fixed');
     });
 }
 // END handleShowNavigationModal
