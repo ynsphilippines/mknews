@@ -81,7 +81,7 @@ function handleNavigationItem( windowView ) {
     if ( windowView === "PC" ) {
         $('.navigation__link').on('click', function() {
             let getClickedMenu = $(this).parent().data('index');
-            let goToSection = $('#'+navigationList[getClickedMenu]['sectionName']).offset().top - 60;
+            let goToSection = $('#'+navigationList[getClickedMenu]['sectionName']).offset().top - 40;
     
             $("html, body").animate({
                 scrollTop: goToSection
@@ -91,6 +91,7 @@ function handleNavigationItem( windowView ) {
         handleToActivateNavigation( navigationList );
         $(window).on('scroll', function() {
             handleToActivateNavigation( navigationList );
+            console.log('document:' + $(document).height() );
         })
 
     } else {
@@ -135,18 +136,19 @@ function handleClickButtonInCustomizationExample( windowView ) {
 function handleToActivateNavigation( navigations ) {
     const position = $(this).scrollTop();
     let navigationActive;
-
     navigations.forEach(function(value, key) {
         let topPosition = $('#' + value.sectionName ).offset().top - 60;
         if( position >= topPosition ) {
             navigationActive = key;
-        }  
+        } 
+        if ( position >= 4000 ) {
+            navigationActive = 5;
+        }
     });
 
     $('.navigation__link').removeClass('navigation__link--active');
     $('.navigation__item[data-index="'+ navigationActive +'"]').find('.navigation__link').addClass('navigation__link--active');
 }
-
 // END handleNavigationItem
 
 
