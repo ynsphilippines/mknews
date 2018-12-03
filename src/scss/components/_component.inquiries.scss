@@ -1,0 +1,135 @@
+.inquiries {
+  max-width: 820px;
+  margin: 0 auto;
+
+  &__note-text {
+    display: block;
+    margin-bottom: 50px;
+    font-size: $fontsize-small;
+    color: $secondary-color;
+    font-weight: bold;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smaller;
+    }
+  }
+
+  &__form-list {
+    margin-bottom: 35px;
+    @media screen and(max-width: $breakpoint-767) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__form-label {
+    font-size: $fontsize-smaller;
+    color: $secondary-color;
+    display: inline-block;
+    width: 220px;
+    vertical-align: middle;
+    font-weight: bold;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__form-input {
+    display: inline-block;
+    width: 600px;
+    vertical-align: middle;
+    font-size: $fontsize-smaller;
+    position: relative;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 100%;
+    }
+  }
+
+  &__form-input-box {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 15px 10px;
+    width: 100%;
+    color: #5e5e5e;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 10px;
+      font-size: $fontsize-smaller;
+    }
+  }
+
+  &__form-required {
+    display: inline-block;
+    margin-left: 7px;
+    color: $error-color;
+    font-weight: bold;
+  }
+
+  &__form-select-box {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 15px 10px;
+    height: 50px;
+    width: 100%;
+    background: url('/images/select-arrow-down.png') no-repeat;
+    background-size: 25px;
+    background-position: right 15px center;
+    color: #5e5e5e;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 10px;
+      font-size: $fontsize-smaller;
+      background-size: 20px;
+      height: 40px;
+    }
+  }
+
+  &__form-textarea {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 15px 10px;
+    height: 150px;
+    width: 100%;
+    resize: none;
+    color: #5e5e5e;
+  }
+
+  &__button-wrapper {
+    display: inline-block;
+    padding-top: 20px;
+    text-align: center;
+    width: 600px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 100%;
+    }
+  }
+
+  &__form-error {
+    font-size: $fontsize-smallest;
+    color: $error-color;
+    display: block;
+    position: absolute;
+    bottom: -22px;
+    @media screen and(max-width: $breakpoint-767) {
+      position: relative;
+      bottom: 0;
+      display: block;
+      padding-top: 5px;
+    }
+  }
+
+  &__reminder {
+    font-size: $fontsize-smaller;
+    display: block;
+    padding-top: 30px;
+  }
+}
+
+.inquiries__form-list.inquiries__form-list--error {
+  .inquiries__form-label {
+    color: $error-color;
+  }
+
+  .inquiries__form-input-box,
+  .inquiries__form-select-box,
+  .inquiries__form-textarea {
+    border-color: $error-color;
+  }
+}

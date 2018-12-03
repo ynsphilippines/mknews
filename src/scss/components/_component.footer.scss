@@ -1,0 +1,210 @@
+.footer {
+  position: relative;
+  border-top: 2px solid #686868;
+
+  &__container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 120px 0 90px;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 50px 0;
+    }
+  }
+
+  &__icons {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    @media screen and(max-width: $breakpoint-767) {
+      bottom: 95px;
+    }
+  }
+
+  &__icons-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__copyright {
+    text-align: center;
+    background: #2e2e2e;
+    padding: 22px 0;
+  }
+
+  &__copyright-text {
+    font-size: $fontsize-smallest;
+    color: $white;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+  }
+
+  &__menu-icon {
+    display: none;
+    @media screen and(max-width: $breakpoint-767) {
+      display: block;
+      left: 15px;
+      bottom: 40px;
+      width: 55px;
+      height: 55px;
+      position: fixed;
+      z-index: 2;
+      background: $primary-color;
+      border-radius: 50%;
+      padding: 12px 15px;
+    }
+  }
+
+  &__scroll-top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 55px;
+      right: 15px;
+      height: 55px;
+    }
+  }
+
+  &__social-media {
+    margin-bottom: 30px;
+  }
+
+  &__social-button {
+    background: #4267b2;
+    font-size: $fontsize-smallest;
+    color: $white;
+    font-weight: bold;
+    padding: 5px 18px;
+    display: inline-block;
+    border-radius: 5px;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: 1rem;
+      padding: 5px;
+    }
+  }
+
+  &__social-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    @media screen and(max-width: $breakpoint-767) {
+      margin-right: 3px;
+    }
+  }
+
+  &__social-icon {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 15px;
+    }
+  }
+
+  &__social-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  &__social-number {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__social-icon-twitter {
+    width: 18px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 13px;
+    }
+  }
+
+  &__social-icon-copy {
+    @media screen and(max-width: $breakpoint-767) {
+      width: 13px;
+    }
+  }
+
+  &__title {
+    font-size: $fontsize-medium;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 10px;
+    color: #505150;
+    font-weight: bold;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+      text-align: center;
+      max-width: 295px;
+      margin: 0 auto 30px;
+      padding: 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 235px;
+    margin: 0 auto 30px;
+    @media screen and(max-width: $breakpoint-767) {
+      width: 195px;
+    }
+  }
+
+  &__logo-img {
+    width: 100%;
+  }
+
+  &__contact-content {
+    text-align: left;
+    font-weight: bold;
+    display: block;
+    font-size: $fontsize-small;
+    color: #505150;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+    }
+  }
+
+  &__contact-info {
+    padding: 10px;
+    @media screen and(max-width: $breakpoint-767) {
+      max-width: 295px;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &__social-button-twitter {
+    background: #00acec;
+  }
+
+  &__social-button-icon {
+    background: #1774b8;
+  }
+
+  &__icon-menu {
+    display: none;
+    @media screen and(max-width: $breakpoint-767) {
+      display: block;
+      margin: 5px 0;
+      width: 25px;
+      height: 4px;
+      background-color: $white;
+      transition: 0.4s;
+      z-index: 2;
+      color: $white;
+    }
+  }
+}

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
   concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
+  uglify = require('gulp-uglify-es').default,
   cleanCSS = require('gulp-clean-css'),
   htmlclean = require('gulp-htmlclean'),
   imagemin = require('gulp-imagemin'),
@@ -21,7 +21,7 @@ var gulp = require('gulp'),
 
     src: './src/*',
     srcCSS: './src/css/**/*.css',
-    srcImg: './src/images/*',
+    srcImg: './src/images/**/*',
     srcJS: './src/javascript/**/*.js',
 
     tmp: 'tmp',   
@@ -141,7 +141,7 @@ gulp.task('distJavascript', function () {
 });
 
 gulp.task('distImage', function () {
-  return gulp.src('./tmp/images/**/*')
+  return gulp.src(paths.srcImg)
   .pipe(cache(imagemin({
     optimizationLevel: 3,
     progressive: true,

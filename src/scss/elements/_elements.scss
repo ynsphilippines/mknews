@@ -10,7 +10,11 @@ html {
 
 body {
   margin: 0;
-  font-family: Montserrat,sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  min-width: 1200px;
+  @media screen and (max-width: $breakpoint-767) {
+    min-width: 100%;
+  }
 }
 
 h1,
@@ -42,6 +46,10 @@ a {
   }
 }
 
+select {
+  appearance: none;
+}
+
 button,
 input,
 optgroup,
@@ -62,4 +70,10 @@ textarea {
   &:focus {
     outline: none;
   }
+}
+
+button.button--submit[disabled] {
+  background: #ccc;
+  pointer-events: none;
+  border: none;
 }

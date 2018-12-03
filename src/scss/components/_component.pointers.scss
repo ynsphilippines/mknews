@@ -1,0 +1,52 @@
+.pointers {
+  font-size: 0;
+
+  &__image-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 80px;
+    width: 310px;
+    @media screen and(max-width: $breakpoint-767) {
+      margin: 0 auto;
+      width: 46%;
+      display: block;
+    }
+  }
+
+  &__image {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__content {
+    display: inline-block;
+    width: 810px;
+    vertical-align: top;
+    padding-top: 35px;
+    @media screen and(max-width: $breakpoint-767) {
+      padding-top: 25px;
+      width: 100%;
+    }
+  }
+
+  &__content-title {
+    font-size: $fontsize-large;
+    color: #505150;
+    margin-bottom: 25px;
+    font-weight: bold;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smaller;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__paragraph-text {
+    display: block;
+    width: 100%;
+    font-size: $fontsize-small;
+    color: #505150;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+    }
+  }
+}

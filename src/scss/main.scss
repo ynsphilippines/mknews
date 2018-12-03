@@ -1,5 +1,17 @@
 @import './src/scss/generics/normalize';
+@import './src/scss/settings/settings';
 @import './src/scss/elements/elements';
+@import './src/scss/trumps/trumps';
 
 // COMPONENTS
 @import './components/component.header';
+@import './components/component.navigation';
+@import './components/component.button';
+@import './components/component.banner';
+@import './components/component.section';
+@import './components/component.pointers';
+@import './components/component.customized-example';
+@import './components/component.customized-flow';
+@import './components/component.inquiries';
+@import './components/component.footer';
+@import './components/component.modal';

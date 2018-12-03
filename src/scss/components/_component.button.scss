@@ -1,0 +1,91 @@
+.button {
+  display: inline-block;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &__text {
+    transition: 0.5s;
+    color: $white;
+    font-size: $fontsize-smaller;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-smallest;
+    }
+  }
+}
+
+.button.button--banner {
+  background: $tertiary-color;
+  border-radius: 10px;
+  border: 2px solid $white;
+  width: 165px;
+
+  .button__text {
+    font-weight: bold;
+  }
+}
+
+.button.button--white {
+  background: $tertiary-color;
+  border-radius: 5px;
+  border: 2px solid $white;
+  width: 180px;
+  @media screen and(max-width: $breakpoint-767) {
+    width: 40%;
+  }
+
+  .button__text {
+    font-weight: 500;
+  }
+}
+
+.button--banner:hover {
+  background: $white;
+
+  .button__text {
+    color: $tertiary-color;
+  }
+}
+
+.button--white:hover {
+  background: $white;
+
+  .button__text {
+    color: $tertiary-color;
+  }
+}
+
+.button.button--submit {
+  background: $tertiary-color;
+  border-radius: 5px;
+  border: 2px solid $tertiary-color;
+  width: 345px;
+  @media screen and(max-width: $breakpoint-767) {
+    width: 100%;
+  }
+
+  .button__text {
+    font-weight: bold;
+  }
+}
+
+.button--submit:hover {
+  background: $white;
+
+  .button__text {
+    color: $tertiary-color;
+  }
+}
+
+.button.button--modal {
+  background: $white;
+  border-radius: 10px;
+  border: 2px solid $tertiary-color;
+  width: 80%;
+
+  .button__text {
+    font-weight: bold;
+    color: $tertiary-color;
+  }
+}

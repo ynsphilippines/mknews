@@ -1,0 +1,101 @@
+.section {
+  &__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 100px 0;
+    @media screen and(max-width: $breakpoint-767) {
+      padding: 40px 15px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 65px;
+    text-align: center;
+    @media screen and(max-width: $breakpoint-767) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title-text {
+    display: inline-block;
+    font-size: $fontsize-largest;
+    color: $primary-color;
+    padding: 10px;
+    position: relative;
+    font-weight: bold;
+    @media screen and(max-width: $breakpoint-767) {
+      font-size: $fontsize-medium;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url('/images/bracket-left-blue.png') no-repeat;
+      background-size: 20px;
+      background-position: left;
+      width: 10px;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url('/images/bracket-left-blue.png') no-repeat;
+      background-size: 20px;
+      background-position: left;
+      width: 10px;
+      height: 100%;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.section--customized {
+  background: $tertiary-color;
+
+  .section__content {
+    padding: 40px 0;
+  }
+
+  .section__title-text {
+    color: $white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url('/images/bracket-left-white.png') no-repeat;
+      background-size: 18px;
+      background-position: left;
+      width: 10px;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -25px;
+      top: 0;
+      vertical-align: middle;
+      background: url('/images/bracket-left-white.png') no-repeat;
+      background-size: 18px;
+      background-position: left;
+      width: 10px;
+      height: 100%;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.section.section--customization-flow {
+  border-bottom: 2px solid $primary-color;
+}
