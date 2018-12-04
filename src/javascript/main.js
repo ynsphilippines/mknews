@@ -513,10 +513,9 @@ function handlePreventPageScrollingModal(modalState) {
     if(modalState == 0) {
         top = $('body').css('top');
         topValue = (parseInt(top, 10)) * -1;
-        console.log('-' + topValue  + 'px');
-        // $('body').removeClass('body--fixed').css('top', '-' + topValue  + 'px');
-        $('body').removeClass('body--fixed');
-        window.scrollTo(0, topValue);
+         $('body').removeClass('body--fixed');
+        // window.scrollTo(0, topValue);
+        window.setTimeout(function() {window.scrollTo(0,topValue);}, 0);
     } else {
         top = $(window).scrollTop();
         $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
