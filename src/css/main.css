@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
   ========================================================================== */
@@ -1001,6 +1002,51 @@ button.button--submit[disabled] {
     font-size: 1.6rem;
     display: block;
     padding-top: 30px; }
+  .inquiries__terms {
+    background: #e0e0e0;
+    padding: 20px 30px 35px;
+    border-radius: 10px;
+    margin: 50px 0 30px; }
+    @media screen and (max-width: 767px) {
+      .inquiries__terms {
+        margin: 30px auto 15px;
+        width: 85%;
+        padding: 0;
+        background: none; } }
+  @media screen and (max-width: 767px) {
+    .inquiries__terms-content {
+      background: #e0e0e0;
+      padding: 20px 15px 20px;
+      border-radius: 10px; } }
+  .inquiries__terms-title {
+    font-size: 1.6rem;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding-bottom: 15px; }
+    @media screen and (max-width: 767px) {
+      .inquiries__terms-title {
+        color: #1071b9; } }
+  .inquiries__terms-item {
+    font-size: 1.2rem;
+    color: #6e6e6e;
+    padding-bottom: 3px; }
+    .inquiries__terms-item:last-child {
+      padding-bottom: 0; }
+    .inquiries__terms-item::before {
+      content: '・';
+      display: inline-block;
+      font-size: 1.2rem;
+      vertical-align: middle;
+      width: 15px; }
+  .inquiries__terms-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 98%; }
+    @media screen and (max-width: 767px) {
+      .inquiries__terms-text {
+        width: 92%; } }
 
 .inquiries__form-list.inquiries__form-list--error .inquiries__form-label {
   color: #ed2024; }
