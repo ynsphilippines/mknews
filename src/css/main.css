@@ -642,6 +642,8 @@ button.button--submit[disabled] {
         display: none; } }
   .banner__logo {
     margin-bottom: 40px; }
+  .banner__desription {
+    display: none; }
   .banner__title {
     margin-bottom: 10px; }
   .banner__title-text {
