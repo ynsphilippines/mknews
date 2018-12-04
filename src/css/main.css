@@ -475,7 +475,8 @@ button.button--submit[disabled] {
 
 .body--fixed {
   overflow: hidden;
-  position: fixed; }
+  position: fixed;
+  height: 100%; }
 
 .footer__menu-icon--active {
   padding: 11px 17px !important; }
