@@ -18,6 +18,7 @@ $(function() {
     handleClickButtonInBanner();
     handleClickButtonInCustomizationExample( windowView );
     handleGetyear();
+    handleCopyClipBoard();
 });
 
 
@@ -511,5 +512,33 @@ function handlePreventPageScrollingModal(modalState) {
     } else {
         top = $(window).scrollTop();
         $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
-    }   
+    }
+    
+}
+
+function handleCopyClipBoard() {
+    let getPath = window.location.href;
+    $('#copy-clipboard').attr('data-clipboard-text',getPath);
+    var clipboard = new ClipboardJS('#copy-clipboard');
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+        toastr.success("You've Successfully Copy the Clip Board!");
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "3000",
+            "hideDuration": "1000",
+            "timeOut": "1000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    });
 }

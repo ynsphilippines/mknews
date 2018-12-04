@@ -82,15 +82,15 @@
 
   &__social-button {
     background: #4267b2;
-    font-size: $fontsize-smallest;
+    font-size: 1.1rem;
     color: $white;
     font-weight: bold;
-    padding: 5px 18px;
+    padding: 6px 10px;
     display: inline-block;
     border-radius: 5px;
+    cursor: pointer;
     @media screen and(max-width: $breakpoint-767) {
-      font-size: 1rem;
-      padding: 5px;
+      padding: 6px;
     }
   }
 
@@ -104,7 +104,7 @@
   }
 
   &__social-icon {
-    width: 20px;
+    width: 16px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
@@ -126,12 +126,6 @@
 
   &__social-icon-twitter {
     width: 18px;
-    @media screen and(max-width: $breakpoint-767) {
-      width: 13px;
-    }
-  }
-
-  &__social-icon-copy {
     @media screen and(max-width: $breakpoint-767) {
       width: 13px;
     }
