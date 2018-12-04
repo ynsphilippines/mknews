@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: sans-serif;
   min-width: 1200px;
   @media screen and (max-width: $breakpoint-767) {
     min-width: 100%;
