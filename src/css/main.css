@@ -585,7 +585,7 @@ button.button--submit[disabled] {
   background: #1774b8;
   border-radius: 5px;
   border: 2px solid #1774b8;
-  width: 345px; }
+  width: 380px; }
   @media screen and (max-width: 767px) {
     .button.button--submit {
       width: 100%; } }
@@ -1009,6 +1009,9 @@ button.button--submit[disabled] {
 .inquiries__form-list.inquiries__form-list--error .inquiries__form-select-box,
 .inquiries__form-list.inquiries__form-list--error .inquiries__form-textarea {
   border-color: #ed2024; }
+
+.inquiries__form-list.inquiries__form-list--button {
+  text-align: center; }
 
 .footer {
   position: relative;
