@@ -10,7 +10,7 @@ $(function() {
     handleSelectBox();
     handleFixedHeader();
     handleNavigationItem( windowView );
-    handleScrollToTop();
+    // handleScrollToTop();
     handleShowNavigationModal();
     handleShowModalCustomizedFlow( windowView );
     handleFormValidation();
@@ -169,10 +169,11 @@ function handleShowNavigationModal() {
             $('.modal').fadeOut(500);
             $(this).removeClass('footer__menu-icon--active');
             $('.modal__navigation').hide();
-            handlePreventPageScrollingModal(0);
+            document.body.style.overflow = 'auto';
         } else {
             $('.modal').fadeIn(500);
-            handlePreventPageScrollingModal(1);
+            // handlePreventPageScrollingModal(1);
+            document.body.style.overflow = 'hidden';
             $(this).addClass('footer__menu-icon--active');
             $('.modal__navigation').show();
         }
