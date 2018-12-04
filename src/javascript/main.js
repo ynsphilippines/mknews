@@ -258,7 +258,7 @@ function handleFormValidation() {
     $('#companyName').on('keyup', function(e) {
         let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
-        if ( $(this).val().length > 1 ) {
+        if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if ( $(this).val().length > 100 ) {
                     errorMessage = formValidationMessage[0]['companyName']['minMaxLength'];
@@ -308,7 +308,7 @@ function handleFormValidation() {
     $('#personInCharge').on('keyup', function() {
         let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
-        if ( $(this).val().length > 1 ) {
+        if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if ( $(this).val().length > 100 ) {
                     errorMessage = formValidationMessage[0]['personInCharge']['minMaxLength'];
@@ -339,7 +339,7 @@ function handleFormValidation() {
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         let errorMessage = "";
 
-        if ( $(this).val().length > 1 ) {
+        if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if( !emailRegex.test(emailAddress.val())) { 
                     $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
