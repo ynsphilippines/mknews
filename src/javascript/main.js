@@ -507,7 +507,8 @@ function handleGetyear() {
 }
 
 function handlePreventPageScrollingModal(modalState) {
-    let top, topValue;
+    let top;
+    let topValue;
 
     if(modalState === 0) {
         top = $('body').css('top');
@@ -518,4 +519,5 @@ function handlePreventPageScrollingModal(modalState) {
         top = $(window).scrollTop();
         $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
     }
+    
 }
