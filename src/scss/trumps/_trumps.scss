@@ -6,8 +6,11 @@
   font-size: $fontsize-smaller;
 }
 
-.body-fixed {
+.body--fixed {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .footer__menu-icon--active {

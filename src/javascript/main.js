@@ -97,7 +97,7 @@ function handleNavigationItem( windowView ) {
         $('.modal__navigation-item').on('click', function() {
             $(this).parents('.modal').fadeOut(500);
             $('.footer__menu-icon').removeClass('footer__menu-icon--active');
-            $('body').removeClass('body-fixed');
+            handlePreventPageScrollingModal(0);
             let getClickedMenu = $(this).data('index');
             let goToSection = +$('#'+navigationList[getClickedMenu]['sectionName']).offset().top;
             $("html, body").animate({
@@ -168,10 +168,10 @@ function handleShowNavigationModal() {
             $('.modal').fadeOut(500);
             $(this).removeClass('footer__menu-icon--active');
             $('.modal__navigation').hide();
-            $('body').removeClass('body-fixed');
+            handlePreventPageScrollingModal(0);
         } else {
             $('.modal').fadeIn(500);
-            $('body').addClass('body-fixed');
+            handlePreventPageScrollingModal(1);
             $(this).addClass('footer__menu-icon--active');
             $('.modal__navigation').show();
         }
@@ -189,14 +189,14 @@ function handleShowModalCustomizedFlow( windowView ) {
             $('.modal').fadeIn(500).css('z-index','2');
             $('.modal__navigation').hide();
             $('.modal__customized-flow').show();
-            $('body').addClass('body-fixed');
+            handlePreventPageScrollingModal(1);
         });
 
         $('.button--modal').on('click', function() {
             $('.modal__customized-content').html('');
             $('.modal').fadeOut(500).css('z-index','initial');
             $('.modal__customized-flow').hide();
-            $('body').removeClass('body-fixed');
+            handlePreventPageScrollingModal(0);
         });
     }
 }
@@ -503,4 +503,18 @@ function handleGetyear() {
     let getDate = new Date();
     let getYear = getDate.getFullYear('YYYY');
     $('#js-year').text(" "+getYear);
+}
+
+function handlePreventPageScrollingModal(modalState) {
+    let top, topValue;
+
+    if(modalState === 0) {
+        top = $('body').css('top');
+        topValue = (parseInt(top, 10)) * -1;
+        $('body').removeClass('body--fixed');
+        window.scrollTo(0, topValue);
+    } else {
+        top = $(window).scrollTop();
+        $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
+    }
 }
