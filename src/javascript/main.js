@@ -401,15 +401,14 @@ function handleGetFormInputValue() {
 function handleSendMessage( value ) {
     let validationStatus;
     const emailSender      = 'sendonly@y-n-s.co.jp';
-    // const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
-    const emailReceiver    = 'darylldigo@gmail.com';
-    // const emailHost        = 'smtp.elasticemail.com'; 
-    // const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
+    const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
+    const emailHost        = 'smtp.elasticemail.com'; 
+    const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
     const emailAddress     = 'third.party.service.yns@gmail.com'; 
 
     // FOR TESTING
-    const emailHost        = 'smtp.gmail.com'; 
-    const password         = 'ynsadmin1234'; 
+    // const emailHost        = 'smtp.gmail.com'; 
+    // const password         = 'ynsadmin1234'; 
 
     Email.send(
         emailSender,
