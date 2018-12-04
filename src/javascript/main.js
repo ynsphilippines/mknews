@@ -188,12 +188,14 @@ function handleShowModalCustomizedFlow( windowView ) {
             $('.modal').fadeIn(500).css('z-index','2');
             $('.modal__navigation').hide();
             $('.modal__customized-flow').show();
+            $('body').addClass('body-fixed');
         });
 
         $('.button--modal').on('click', function() {
             $('.modal__customized-content').html('');
             $('.modal').fadeOut(500).css('z-index','initial');
             $('.modal__customized-flow').hide();
+            $('body').removeClass('body-fixed');
         });
     }
 }
