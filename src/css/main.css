@@ -404,7 +404,8 @@ body {
   min-width: 1200px; }
   @media screen and (max-width: 767px) {
     body {
-      min-width: 100%; } }
+      min-width: 100%;
+      position: static; } }
 
 h1,
 h2,

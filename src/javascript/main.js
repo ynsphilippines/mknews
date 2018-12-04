@@ -512,8 +512,9 @@ function handlePreventPageScrollingModal(modalState) {
 
     if(modalState == 0) {
         top = $('body').css('top');
-        console.log(top);
         topValue = (parseInt(top, 10)) * -1;
+        console.log('-' + topValue  + 'px');
+        // $('body').removeClass('body--fixed').css('top', '-' + topValue  + 'px');
         $('body').removeClass('body--fixed');
         window.scrollTo(0, topValue);
     } else {
