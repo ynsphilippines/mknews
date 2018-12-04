@@ -465,7 +465,11 @@ textarea:focus {
 button.button--submit[disabled] {
   background: #ccc;
   pointer-events: none;
-  border: none; }
+  border: none;
+  color: #fff; }
+  button.button--submit[disabled] .button__text:hover {
+    color: #fff;
+    pointer-events: none; }
 
 .toast-top-right {
   top: 65px; }
