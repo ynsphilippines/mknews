@@ -117,8 +117,6 @@ function handleClickButtonInBanner() {
 }
 
 function handleClickButtonInCustomizationExample() {
-    // let goToSection = $('#js-contactus').position().top
-
     $('.button--white').on('click', function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $('#js-contactus').offset().top
