@@ -76,4 +76,10 @@ button.button--submit[disabled] {
   background: #ccc;
   pointer-events: none;
   border: none;
+  color: $white;
+  
+  .button__text:hover {
+    color: $white;
+    pointer-events: none;
+  }
 }
