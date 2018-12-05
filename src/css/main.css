@@ -1161,7 +1161,7 @@ button.button--submit[disabled] {
   .footer__social-item {
     display: inline-block;
     vertical-align: top;
-    margin-right: 8px; }
+    margin-right: 4px; }
     @media screen and (max-width: 767px) {
       .footer__social-item {
         margin-right: 3px; } }
