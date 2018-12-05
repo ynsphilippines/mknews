@@ -316,8 +316,8 @@ function handleFormValidation() {
         }
     });
 
+    let textBoxEmpty = false;
     $('input, select, textarea').on('keyup change', function() {
-        let textBoxEmpty = false;
         let passData = false;
         let selectbox = false;
         let isEmpty = $('.js-required').filter(function() {
@@ -327,6 +327,7 @@ function handleFormValidation() {
         $('select').val() != 0 ? selectbox = true : selectbox = false;
 
         isEmpty.length ? textBoxEmpty = false : textBoxEmpty = true; 
+        console.log(textBoxEmpty);
 
         if ( selectbox == true && textBoxEmpty == true ) {
             $('.button.button--submit').removeAttr('disabled');
