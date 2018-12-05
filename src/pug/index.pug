@@ -1,7 +1,14 @@
 html(lang="ja")
   head
     title Make News - ニュースアプリのカスタマイズ開発
-    meta(name="description" content='Make News"は、ニュースアプリの開発・カスタマイズに特化した製品です。自社内や関連企業に向けた周知のためなど、ある特定のクローズドコミュニティに最適化したデザインでスマホアプリが制作できます')
+    meta(name="description" content='"Make News"は、ニュースアプリの開発・カスタマイズに特化した製品です。自社内や関連企業に向けた周知のためなど、ある特定のクローズドコミュニティに最適化したデザインでスマホアプリが制作できます')
+    
+    meta(property="og:url" content="https://makenews.y-n-s.co.jp/")
+    meta(property="og:type" content="article")
+    meta(property="og:title" content="When Great Minds Don’t Think Alike")
+    meta(property="og:description" content="How much does culture influence creative thinking?")
+    meta(property="og:image" content="https://y-n-s.co.jp/wp-content/uploads/2018/08/YNSJP-fbshare.png")
+    meta(name="twitter:image" content="http://placekitten.com/250/250")
     meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet")
@@ -9,7 +16,16 @@ html(lang="ja")
     link(href="/css/plugins/toastr.min.css" rel="stylesheet" type="text/css")
     link(href="/css/main.min.css" rel="stylesheet" type="text/css")
 
-  body      
+  body
+    #fb-root
+      script.
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));      
     main
       //- BANNER SECTION
       .banner#js-top
@@ -259,8 +275,12 @@ html(lang="ja")
         .footer__social-media
           .footer__social-list
             .footer__social-item
-              iframe(src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fmknews.netlify.com%2F&width=133&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId=335578333723688" width="133" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
+              .fb-like(data-href="https://makenews.y-n-s.co.jp/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false") 
             
+            .footer__social-item
+              .fb-share-button(data-href="https://makenews.y-n-s.co.jp/" data-layout="button" data-size="large" data-mobile-iframe="true")
+                a.fb-xfbml-parse-ignore(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse") Share
+
             .footer__social-item
               a.twitter-share-button(href="https://twitter.com/intent/tweet" data-show-count="false" data-size="large" data-text="example text" data-hashtags="makenews" data-lang="en" ) Tweet
               script(async src="https://platform.twitter.com/widgets.js")
