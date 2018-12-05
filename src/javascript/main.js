@@ -14,7 +14,7 @@ $(function() {
     handleShowNavigationModal();
     handleShowModalCustomizedFlow( windowView );
     handleFormValidation();
-    handleGetFormInputValue();
+    // handleGetFormInputValue();
     handleClickButtonInBanner();
     handleClickButtonInCustomizationExample( windowView );
     handleGetyear();
@@ -206,38 +206,6 @@ function htmlEntities(string) {
 }
 
 function handleFormValidation() {
-    const formValidationMessage = [
-        {
-            companyName: { 
-                required     : "Company name is required",
-                minMaxLength : "Minimum of 1, Maximum of 100 characters only",
-                halfWidthKana : "Half width kana is not allowed"
-            },
-            departmentName: {
-                maxLength : "Maximum of 100 characters only",
-                halfWidthKana : "Half width kana is not allowed"
-            },
-            personInCharge: {
-                required     : "Person in charge is required",
-                minMaxLength : "Maximum of 100 characters only",
-                halfWidthKana : "Half width kana is not allowed"
-            },
-            mailAddress: {
-                required        : "Email Address is required",
-                emailValidation : "Email address format is invalid",
-                halfWidthKana : "Half width kana is not allowed"
-            },
-            summaryTitle: {
-                required : "Summary title is required"
-            },
-            content: {
-                required     : "Content is required",
-                minMaxLength : "Minimum of 2 and maximum of 2000 characters only",
-                halfWidthKana : "Half width kana is not allowed"
-            }
-        }
-    ];
-
     let companyName = false;
     let departmentName = false;
     let personInCharge = false;
@@ -249,80 +217,63 @@ function handleFormValidation() {
 
     // COMPANY NAME
     $('#companyName').on('keyup', function(e) {
-        let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if ( $(this).val().length > 100 ) {
-                    errorMessage = formValidationMessage[0]['companyName']['minMaxLength'];
-                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                     companyName = false;
+                    $(this).parents('.inquiries__form-list').addClass('js-error');
                 } else {
-                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-                    errorMessage = '';
                     companyName = true;
+                    $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
                 }
             } else {
-                errorMessage = formValidationMessage[0]['companyName']['halfWidthKana'];
-                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                 companyName = false;
+                $(this).parents('.inquiries__form-list').addClass('js-error');
             }
         } else {
-            errorMessage = formValidationMessage[0]['companyName']['required'];
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             companyName = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);    
     });
 
     // DEPARTMENT NAME
     $('#departmentName').on('keyup', function() {
-        let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if( !halfWidthKana.test($(this).val())) { 
             if ( $(this).val().length > 100 ) {
-                    errorMessage = formValidationMessage[0]['departmentName']['maxLength'];
-                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
-                    departmentName = false;
+                departmentName = false;
+                $(this).parents('.inquiries__form-list').addClass('js-error');
             } else {
-                $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-                errorMessage = "";
                 departmentName = true;
+                $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
             }
         } else {
-            errorMessage = formValidationMessage[0]['departmentName']['halfWidthKana'];
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             departmentName = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
     // PERSON IN CHARGE
     $('#personInCharge').on('keyup', function() {
-        let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if ( $(this).val().length > 100 ) {
-                    errorMessage = formValidationMessage[0]['personInCharge']['minMaxLength'];
-                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                     personInCharge = false;
+                    $(this).parents('.inquiries__form-list').addClass('js-error');
                 } else {
-                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-                    errorMessage = '';
                     personInCharge = true;
+                    $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
                 }
             } else {
-                errorMessage = formValidationMessage[0]['personInCharge']['halfWidthKana'];
-                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                 personInCharge = false;
+                $(this).parents('.inquiries__form-list').addClass('js-error');
             }
         } else {
-            errorMessage = formValidationMessage[0]['personInCharge']['required'];
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             personInCharge = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
     // EMAIL ADDRESS
@@ -330,102 +281,112 @@ function handleFormValidation() {
         emailAddress = $(this);
         let emailRegex = /^[^./@]+[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
-        let errorMessage = "";
 
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
                 if( !emailRegex.test(emailAddress.val())) { 
-                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
-                    errorMessage = formValidationMessage[0]['mailAddress']['emailValidation'];
                     mailAddress = false;
+                    $(this).parents('.inquiries__form-list').addClass('js-error');
                 } else {
-                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-                    errorMessage = "";
                     mailAddress = true;
+                    $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
                 }
             } else {
-                errorMessage = formValidationMessage[0]['mailAddress']['halfWidthKana'];
-                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                 mailAddress = false;
+                $(this).parents('.inquiries__form-list').addClass('js-error');
             }
         } else {
-            errorMessage = formValidationMessage[0]['mailAddress']['required'];
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             mailAddress = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
     // TITLE / INQURIES OVERVIEW
     $('#inquiries-overview').on('change focus', function() {
-        let errorMessage = "";
         if ( +$(this).val() === 0 ) {
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
-            errorMessage = formValidationMessage[0]['summaryTitle']['required'];
             summaryTitle = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         } else {
-            $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-            errorMessage = "";
             summaryTitle = true;
+            $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
     // CONTENTS ( BODY )
     $('#contents').on('keyup', function() {
-        let errorMessage = "";
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) {
                 if ( $(this).val().length > 2000 ) {
-                    errorMessage = formValidationMessage[0]['content']['minMaxLength'];
-                    $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                     contentText = false;
+                    $(this).parents('.inquiries__form-list').addClass('js-error');
                 } else {
-                    $(this).parents('.inquiries__form-list').removeClass('inquiries__form-list--error');
-                    errorMessage = "";
                     contentText = true;
+                    $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
                 }
             } else {
-                errorMessage = formValidationMessage[0]['content']['halfWidthKana'];
-                $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
                 contentText = false;
+                $(this).parents('.inquiries__form-list').addClass('js-error');
             }
         } else {
-            errorMessage = formValidationMessage[0]['content']['required'];
-            $(this).parents('.inquiries__form-list').addClass('inquiries__form-list--error');
             contentText = false;
+            $(this).parents('.inquiries__form-list').addClass('js-error');
         }
-        $(this).next('.inquiries__form-error').text(errorMessage);
     });
 
     $('input, select, textarea').on('keyup change', function() {
-        if ( companyName === true  && departmentName === true && personInCharge === true && 
-            mailAddress === true && summaryTitle === true && contentText === true ) {
-           $('.button.button--submit').removeAttr('disabled');
-       } else {
-        $('.button.button--submit').attr('disabled','disabled');
-       }
+        let textBoxEmpty = false;
+        let passData = false;
+        let selectbox = false;
+        let isEmpty = $('.js-required').filter(function() {
+            return this.value === "";
+        });
+        console.log($('select').val())
+
+        $('select').val() != 0 ? selectbox = true : selectbox = false;
+
+        isEmpty.length ? textBoxEmpty = false : textBoxEmpty = true; 
+
+        if ( selectbox === true && textBoxEmpty === true ) {
+            $('.button.button--submit').removeAttr('disabled');
+            if ( companyName === true  && departmentName === true && personInCharge === true && 
+                mailAddress === true && summaryTitle === true && contentText === true ) {
+                passData = true;
+            } else {
+                passData = false;
+            }
+        } else {
+            $('.button.button--submit').attr('disabled','disabled');
+        }
+        $('#inquiriesData').val(passData);
     });
+    handleGetFormInputValue();   
 }
 
 function handleGetFormInputValue() {
     $('.button--submit').on('click', function() {
-        let getDateTime = new Date();
-        let dateTimeFormat = getDateTime.getFullYear() + "-" + (getDateTime.getMonth()+1) + "-" + getDateTime.getDate() + " " + getDateTime.getHours() + ":" + getDateTime.getMinutes();
-        let getUrl = window.location.href; 
-        let mailContent = {
-            companyName       : htmlEntities($('#companyName').val()),
-            departmentName    : htmlEntities($('#departmentName').val()),
-            personInCharge    : htmlEntities($('#personInCharge').val()),
-            mailAddress       : htmlEntities($('#mailAddress').val()),
-            inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
-            contents          : htmlEntities($('#contents').val()),
-            dateTime          : htmlEntities(dateTimeFormat),
-            websiteUrl        : htmlEntities(getUrl)
-        };
+        let value = $('#inquiriesData').val();
 
-        handleSendMessage( mailContent );
+        if ( value === "true" ) {
+            let getDateTime = new Date();
+            let dateTimeFormat = getDateTime.getFullYear() + "-" + (getDateTime.getMonth()+1) + "-" + getDateTime.getDate() + " " + getDateTime.getHours() + ":" + getDateTime.getMinutes();
+            let getUrl = window.location.href; 
+            let mailContent = {
+                companyName       : htmlEntities($('#companyName').val()),
+                departmentName    : htmlEntities($('#departmentName').val()),
+                personInCharge    : htmlEntities($('#personInCharge').val()),
+                mailAddress       : htmlEntities($('#mailAddress').val()),
+                inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
+                contents          : htmlEntities($('#contents').val()),
+                dateTime          : htmlEntities(dateTimeFormat),
+                websiteUrl        : htmlEntities(getUrl)
+            };
+            handleSendMessage( mailContent );
+            $('.inquiries__form-list').removeClass('js-error, inquiries__form-list--error');
+        } else {
+            $('.js-error').addClass('inquiries__form-list--error');
+            toastr.error("適切にご入力ください!");
+        }
     });
 }
 
@@ -477,6 +438,7 @@ function handleSideNotification( validationStatus ) {
 
     if ( validationStatus === true ) {
         toastr.success("You've Successfully Send Your Message!");
+        $('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
     } else {
         toastr.error("Failed!")
     }
