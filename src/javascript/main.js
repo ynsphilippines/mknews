@@ -116,18 +116,12 @@ function handleClickButtonInBanner() {
     })
 }
 
-function handleClickButtonInCustomizationExample( windowView ) {
-    let goToSection;
-    // if ( windowView == "PC" ) {
-        goToSection = $('#js-contactus').position().top;
-        console.log('offset:' + $('#js-contactus').position().top + " - " + "height:" + $('.header').height() + " - " +"gotosection:" + goToSection )
-    // } else {
-        // goToSection = $('#js-contactus').position().top
-    // }
+function handleClickButtonInCustomizationExample() {
+    // let goToSection = $('#js-contactus').position().top
 
     $('.button--white').on('click', function() {
-        $("html, body").animate({
-            scrollTop: goToSection
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $('#js-contactus').offset().top
         }, 1000); 
     })
 }
