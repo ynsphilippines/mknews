@@ -323,7 +323,6 @@ function handleFormValidation() {
         let isEmpty = $('.js-required').filter(function() {
             return this.value === "";
         });
-        console.log(departmentName);
 
         $('select').val() != 0 ? selectbox = true : selectbox = false;
 

@@ -837,6 +837,9 @@ button.button--submit[disabled] {
     .customized-example__item-title {
       font-size: 1.4rem; } }
 
+.customized-example__image {
+  width: 100%; }
+
 .customized-example__image-wrapper {
   margin-bottom: 30px; }
 
