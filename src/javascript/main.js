@@ -1,5 +1,5 @@
 $(function() {
-    let windowView = "";
+    let windowView;
     
     if ( $(window).width() <= 767 ) {
         windowView = "mobile";
@@ -118,9 +118,8 @@ function handleClickButtonInBanner() {
 
 function handleClickButtonInCustomizationExample( windowView ) {
     let goToSection;
-
     if ( windowView == "PC" ) {
-        goToSection = $('#js-contactus').offset().top - 40;
+        goToSection = $('#js-contactus').offset().top - $('.header').height();
     } else {
         goToSection = $('#js-contactus').offset().top
     }
