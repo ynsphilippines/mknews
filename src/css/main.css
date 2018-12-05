@@ -406,7 +406,7 @@ body {
   @media screen and (max-width: 767px) {
     body {
       min-width: 100%;
-      position: static; } }
+      position: relative; } }
 
 h1,
 h2,
