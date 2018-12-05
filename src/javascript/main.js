@@ -323,16 +323,15 @@ function handleFormValidation() {
         let isEmpty = $('.js-required').filter(function() {
             return this.value === "";
         });
-        console.log($('select').val())
 
         $('select').val() != 0 ? selectbox = true : selectbox = false;
 
         isEmpty.length ? textBoxEmpty = false : textBoxEmpty = true; 
 
-        if ( selectbox === true && textBoxEmpty === true ) {
+        if ( selectbox == true && textBoxEmpty == true ) {
             $('.button.button--submit').removeAttr('disabled');
-            if ( companyName === true  && departmentName === true && personInCharge === true && 
-                mailAddress === true && summaryTitle === true && contentText === true ) {
+            if ( companyName == true  && departmentName == true && personInCharge == true && 
+                mailAddress == true && summaryTitle == true && contentText == true ) {
                 passData = true;
             } else {
                 passData = false;
