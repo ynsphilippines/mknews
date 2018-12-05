@@ -397,8 +397,7 @@ template {
   -webkit-tap-highlight-color: transparent; }
 
 html {
-  font-size: 10px;
-  position: relative; }
+  font-size: 10px; }
 
 body {
   margin: 0;
@@ -678,7 +677,8 @@ button.button--submit[disabled] {
 .section__content {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 100px 0; }
+  padding: 100px 0;
+  position: relative; }
   @media screen and (max-width: 767px) {
     .section__content {
       padding: 40px 15px; } }

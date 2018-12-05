@@ -3,6 +3,7 @@
     margin: 0 auto;
     max-width: 1200px;
     padding: 100px 0;
+    position: relative;
     @media screen and(max-width: $breakpoint-767) {
       padding: 40px 15px;
     }
