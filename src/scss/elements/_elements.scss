@@ -14,8 +14,11 @@ body {
   min-width: 1200px;
   @media screen and (max-width: $breakpoint-767) {
     min-width: 100%;
-    position: relative;
   }
+}
+
+main {
+  position: relative;
 }
 
 h1,
