@@ -1,6 +1,11 @@
 html(lang="ja")
   head
     title Make News
+    meta(property="og:url" content="https://www.your-domain.com/your-page.html")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Your Website Title")
+    meta(property="og:description" content="Your description")
+    meta(property="og:image" content="https://www.your-domain.com/path/image.jpg")
     meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet")
@@ -8,7 +13,7 @@ html(lang="ja")
     link(href="/css/plugins/toastr.min.css" rel="stylesheet" type="text/css")
     link(href="/css/main.min.css" rel="stylesheet" type="text/css")
 
-  body#fixed
+  body      
     main
       //- BANNER SECTION
       .banner#js-top
@@ -260,22 +265,14 @@ html(lang="ja")
         .footer__social-media
           .footer__social-list
             .footer__social-item
-              a.footer__social-button
-                img.footer__social-icon(src="/images/like.png" alt="facebook")
-                span.footer__social-text Like
-                span.footer__social-number 112K
-              
-            .footer__social-item
-              a.footer__social-button
-                span.footer__social-text Share
+              iframe(src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fmknews.netlify.com%2F&width=133&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId=335578333723688" width="133" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
             
             .footer__social-item
-              a.footer__social-button.footer__social-button-twitter
-                img.footer__social-icon.footer__social-icon-twitter(src="/images/twitter.png" alt="twitter")
-                span.footer__social-text Tweet
-          
+              a.twitter-share-button(href="https://twitter.com/intent/tweet" data-show-count="false" data-size="large" data-text="example text" data-hashtags="makenews" data-lang="en" ) Tweet
+              script(async src="https://platform.twitter.com/widgets.js")
+
             .footer__social-item
-              a.footer__social-button.footer__social-button-icon
+              a.footer__social-button.footer__social-button-icon#copy-clipboard(data-clipboard-text="Just because you can doesn't mean you should — clipboard.js")
                 img.footer__social-icon.footer__social-icon-copy(src="/images/copy-url.png" alt="copy url")
                 span.footer__social-text Copy URL
         
@@ -324,4 +321,5 @@ html(lang="ja")
     script(src="/javascript/plugins/jquery-3.3.1.min.js")
     script(src="/javascript/plugins/smtpjs.min.js")
     script(src="/javascript/plugins/toastr.min.js")
+    script(src="/javascript/plugins/clipboard.min.js")
     script(src="/javascript/main.min.js")
