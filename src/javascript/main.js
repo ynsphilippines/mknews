@@ -189,7 +189,7 @@ function htmlEntities(string) {
 
 function handleFormValidation() {
     let companyName = false;
-    let departmentName = false;
+    let departmentName = true;
     let personInCharge = false;
     let mailAddress = false;
     let summaryTitle = false;
@@ -323,6 +323,7 @@ function handleFormValidation() {
         let isEmpty = $('.js-required').filter(function() {
             return this.value === "";
         });
+        console.log(departmentName);
 
         $('select').val() != 0 ? selectbox = true : selectbox = false;
 
@@ -450,42 +451,19 @@ function handleGetyear() {
 }
 
 function handlePreventPageScrollingModal(modalState) {
-    var $docEl = $([document.documentElement, document.body]),
-    $wrap = $('main'),
-    scrollTop;
+    let top;
+    let topValue;
 
-    if(modalState == 0) {
-        $docEl.css({
-            height: "",
-            overflow: ""
-        });
-    
-        $wrap.css({
-            top: ''
-        });
-    
-        window.scrollTo(0, scrollTop);
-        window.setTimeout(function () {
-            scrollTop = null;
-        }, 0);
-
+    if(modalState == 0) {       
+        top = $('body').css('top');
+        topValue = (parseInt(top, 10)) * -1;
+         $('body').removeClass('body--fixed');
+        window.scrollTo(0, topValue);
     } else {
-        if(window.pageYOffset) {
-            scrollTop = window.pageYOffset;
-            
-            $wrap.css({
-                top: - (scrollTop)
-            });
-        }
-    
-        $docEl.css({
-            height: "100%",
-            overflow: "hidden"
-        });
+        top = $(window).scrollTop();
+        $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
     }
-    
 }
-
 
 function handleCopyClipBoard() {
     let getPath = window.location.href;
