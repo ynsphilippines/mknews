@@ -397,7 +397,8 @@ template {
   -webkit-tap-highlight-color: transparent; }
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  position: relative; }
 
 body {
   margin: 0;
@@ -406,9 +407,6 @@ body {
   @media screen and (max-width: 767px) {
     body {
       min-width: 100%; } }
-
-main {
-  position: relative; }
 
 h1,
 h2,

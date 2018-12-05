@@ -6,6 +6,7 @@
 
 html {
   font-size: 10px;
+  position: relative;
 }
 
 body {
@@ -15,10 +16,6 @@ body {
   @media screen and (max-width: $breakpoint-767) {
     min-width: 100%;
   }
-}
-
-main {
-  position: relative;
 }
 
 h1,
