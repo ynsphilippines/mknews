@@ -402,7 +402,8 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  min-width: 1200px; }
+  min-width: 1200px;
+  position: relative; }
   @media screen and (max-width: 767px) {
     body {
       min-width: 100%; } }
@@ -499,7 +500,7 @@ button.button--submit[disabled] {
 .header {
   background: #fff;
   box-shadow: 0 4px 15px #dcdcdc;
-  padding: 8px 0;
+  padding: 8px;
   width: 100%;
   position: absolute;
   top: 865px;
