@@ -119,7 +119,7 @@ function handleClickButtonInBanner() {
 function handleClickButtonInCustomizationExample( windowView ) {
     let goToSection;
 
-    if ( windowView === "PC" ) {
+    if ( windowView == "PC" ) {
         goToSection = $('#js-contactus').offset().top - 40;
     } else {
         goToSection = $('#js-contactus').offset().top
