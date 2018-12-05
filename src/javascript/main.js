@@ -442,11 +442,18 @@ function handleSendMessage( value ) {
     // const emailHost        = 'smtp.gmail.com'; 
     // const password         = 'ynsadmin1234'; 
 
+    let departNameAndSummaryValue = "";
+    if ( value['departmentName'] === "") {
+        departNameAndSummaryValue = value['personInCharge'];
+    } else {
+        departNameAndSummaryValue = value['departmentName'] + " - " + value['personInCharge'];
+    }
+
     Email.send(
         emailSender,
         emailReceiver,
         `${value['companyName']}`+ ' - ' +` ${value['inquiriesOverview']}`,
-        `${value['departmentName']}` + '-' + `${value['personInCharge']}` + '<br>' + `${value['mailAddress']}` + '<br>' + `${value['contents']}` + '<br><br>' + `${value['dateTime']}` + '<br>' + `${value['websiteUrl']}`,
+        `${departNameAndSummaryValue}` + '<br>' + `${value['mailAddress']}` + '<br>' + `${value['contents']}` + '<br><br>' + `${value['dateTime']}` + '<br>' + `${value['websiteUrl']}`,
         emailHost,
         emailAddress,
         password,
