@@ -496,6 +496,14 @@ button.button--submit[disabled] {
     -webkit-transform: rotate(45deg) translate(-6px, -4px);
             transform: rotate(45deg) translate(-6px, -4px); }
 
+@media screen and (max-width: 767px) {
+  .button--white:hover {
+    background: #1774b8 !important; } }
+
+@media screen and (max-width: 767px) {
+  .button--white:hover .button__text {
+    color: #fff; } }
+
 .header {
   background: #fff;
   box-shadow: 0 4px 15px #dcdcdc;

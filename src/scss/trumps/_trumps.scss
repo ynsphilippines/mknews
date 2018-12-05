@@ -31,3 +31,15 @@
     }
   }
 }
+
+.button--white:hover {
+  @media screen and(max-width: $breakpoint-767) {
+    background: $tertiary-color !important;
+  }
+
+  .button__text {
+    @media screen and(max-width: $breakpoint-767) {
+      color: $white;
+    }
+  }
+}
