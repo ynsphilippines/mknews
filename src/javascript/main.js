@@ -327,7 +327,6 @@ function handleFormValidation() {
         $('select').val() != 0 ? selectbox = true : selectbox = false;
 
         isEmpty.length ? textBoxEmpty = false : textBoxEmpty = true; 
-        console.log(textBoxEmpty);
 
         if ( selectbox == true && textBoxEmpty == true ) {
             $('.button.button--submit').removeAttr('disabled');
@@ -451,21 +450,41 @@ function handleGetyear() {
 }
 
 function handlePreventPageScrollingModal(modalState) {
-    let top;
-    let topValue;
+    var $docEl = $('html, body'),
+    $wrap = $('main'),
+    scrollTop;
 
     if(modalState == 0) {
-        top = $('body').css('top');
-        topValue = (parseInt(top, 10)) * -1;
-         $('body').removeClass('body--fixed');
-        // window.scrollTo(0, topValue);
-        window.setTimeout(function() {window.scrollTo(0,topValue);}, 0);
+        $docEl.css({
+            height: "",
+            overflow: ""
+        });
+    
+        $wrap.css({
+            top: ''
+        });
+    
+        window.scrollTo(0, scrollTop);
+        window.setTimeout(function () {
+            scrollTop = null;
+        }, 0);
     } else {
-        top = $(window).scrollTop();
-        $('body').addClass('body--fixed').css('top', '-' + top  + 'px');
+        if(window.pageYOffset) {
+            scrollTop = window.pageYOffset;
+            
+            $wrap.css({
+                top: - (scrollTop)
+            });
+        }
+    
+        $docEl.css({
+            height: "100%",
+            overflow: "hidden"
+        });
     }
     
 }
+
 
 function handleCopyClipBoard() {
     let getPath = window.location.href;
@@ -493,3 +512,32 @@ function handleCopyClipBoard() {
         }
     });
 }
+
+
+// $(document).ready(function() {
+//     var $docEl = $('html, body'),
+//       $wrap = $('main'),
+//       scrollTop;
+  
+//     $('button').click(function(e) {
+//       overlayOpen();
+//       e.preventDefault();
+//     });
+  
+//     $('.close').click(function(e) {
+//       overlayClose();
+//       e.preventDefault();
+//     });
+    
+//     var overlayClose = function() {
+//       $.unlockBody();
+//       $('body').removeClass('overlay-open');
+//     }
+//     var overlayOpen = function() {
+//       $('body').addClass('overlay-open');
+//       $.lockBody();
+//     }
+  
+    
+//   });
+  

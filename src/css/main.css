@@ -407,6 +407,9 @@ body {
     body {
       min-width: 100%; } }
 
+main {
+  position: relative; }
+
 h1,
 h2,
 h3,
@@ -482,7 +485,6 @@ button.button--submit[disabled] {
   overflow: hidden;
   position: fixed;
   height: 100vh;
-  top: 0;
   left: 0;
   bottom: 0; }
 
@@ -624,7 +626,8 @@ button.button--submit[disabled] {
     .banner {
       background: url("/images/banner-sp.png") no-repeat;
       background-size: cover;
-      background-position: 50%; } }
+      background-position: 50%;
+      margin-bottom: 60px; } }
   .banner__content {
     margin: 0 auto;
     max-width: 1200px;
