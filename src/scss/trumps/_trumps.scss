@@ -39,7 +39,7 @@
 
   .button__text {
     @media screen and(max-width: $breakpoint-767) {
-      color: $white;
+      color: $white !important;
     }
   }
 }

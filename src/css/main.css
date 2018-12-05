@@ -502,7 +502,7 @@ button.button--submit[disabled] {
 
 @media screen and (max-width: 767px) {
   .button--white:hover .button__text {
-    color: #fff; } }
+    color: #fff !important; } }
 
 .header {
   background: #fff;
