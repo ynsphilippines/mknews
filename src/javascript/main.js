@@ -450,7 +450,7 @@ function handleGetyear() {
 }
 
 function handlePreventPageScrollingModal(modalState) {
-    var $docEl = $('html, body'),
+    var $docEl = $([document.documentElement, document.body]),
     $wrap = $('main'),
     scrollTop;
 
@@ -468,6 +468,7 @@ function handlePreventPageScrollingModal(modalState) {
         window.setTimeout(function () {
             scrollTop = null;
         }, 0);
+
     } else {
         if(window.pageYOffset) {
             scrollTop = window.pageYOffset;
@@ -512,32 +513,3 @@ function handleCopyClipBoard() {
         }
     });
 }
-
-
-// $(document).ready(function() {
-//     var $docEl = $('html, body'),
-//       $wrap = $('main'),
-//       scrollTop;
-  
-//     $('button').click(function(e) {
-//       overlayOpen();
-//       e.preventDefault();
-//     });
-  
-//     $('.close').click(function(e) {
-//       overlayClose();
-//       e.preventDefault();
-//     });
-    
-//     var overlayClose = function() {
-//       $.unlockBody();
-//       $('body').removeClass('overlay-open');
-//     }
-//     var overlayOpen = function() {
-//       $('body').addClass('overlay-open');
-//       $.lockBody();
-//     }
-  
-    
-//   });
-  
