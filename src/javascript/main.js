@@ -7,35 +7,17 @@ $(function() {
         windowView = "PC";
     }
 
-    // handleSelectBox();
     handleFixedHeader();
     handleNavigationItem( windowView );
     handleScrollToTop();
     handleShowNavigationModal();
     handleShowModalCustomizedFlow( windowView );
     handleFormValidation();
-    // handleGetFormInputValue();
     handleClickButtonInBanner();
     handleClickButtonInCustomizationExample( windowView );
     handleGetyear();
     handleCopyClipBoard();
 });
-
-
-// POPULATE SELECTBOX IN INQUIRY SECTION
-// function handleSelectBox() {
-//     const overView = [
-//         { value: '選択してください'},
-//         { value: 'カスタマイズのご相談'},
-//         { value: '取材のご依頼'},
-//         { value: 'その他お問い合わせ'}
-//     ];
-    
-//     // overView.forEach((value, key) => {
-//     //     $('#inquiries-overview').append('<option value="'+ key +'" id="'+ key +'">' + htmlEntities(value['value']) + '</option>');
-//     // });
-// }
-// END handleSelectBox
 
 // HEADER FIXED ON LOAD AND SCROLL
 function handleFixedHeader() {
