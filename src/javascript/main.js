@@ -118,12 +118,12 @@ function handleClickButtonInBanner() {
 
 function handleClickButtonInCustomizationExample( windowView ) {
     let goToSection;
-    if ( windowView == "PC" ) {
-        goToSection = $('#js-contactus').offset().top - $('.header').height();
-        console.log('offset:' + $('#js-contactus').offset().top + " - " + "height:" + $('.header').height() + " - " +"gotosection:" + goToSection )
-    } else {
-        goToSection = $('#js-contactus').offset().top
-    }
+    // if ( windowView == "PC" ) {
+        goToSection = $('#js-contactus').position().top - $('.header').height();
+        console.log('offset:' + $('#js-contactus').position().top + " - " + "height:" + $('.header').height() + " - " +"gotosection:" + goToSection )
+    // } else {
+        // goToSection = $('#js-contactus').position().top
+    // }
 
     $('.button--white').on('click', function() {
         $("html, body").animate({
