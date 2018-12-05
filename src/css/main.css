@@ -1205,7 +1205,8 @@ button.button--submit[disabled] {
     font-weight: bold;
     display: block;
     font-size: 1.8rem;
-    color: #505150; }
+    color: #505150;
+    display: block; }
     @media screen and (max-width: 767px) {
       .footer__contact-content {
         font-size: 1.4rem; } }

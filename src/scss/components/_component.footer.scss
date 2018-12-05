@@ -166,6 +166,7 @@
     display: block;
     font-size: $fontsize-small;
     color: #505150;
+    display: block;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smallest;
     }
