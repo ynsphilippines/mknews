@@ -454,9 +454,9 @@ function handlePreventPageScrollingModal(modalState) {
     let topValue;
 
     if(modalState == 0) {       
-        top = $('body').css('top');
-        topValue = (parseInt(top, 10)) * -1;
-         $('body').removeClass('body--fixed');
+        top = $('body').css('top')
+        topValue =  Math.abs(parseInt(top));
+        $('body').removeClass('body--fixed');
         window.scrollTo(0, topValue);
     } else {
         top = $(window).scrollTop();

@@ -402,8 +402,7 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  min-width: 1200px;
-  position: relative; }
+  min-width: 1200px; }
   @media screen and (max-width: 767px) {
     body {
       min-width: 100%; } }
