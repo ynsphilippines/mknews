@@ -350,7 +350,9 @@ function handleGetFormInputValue() {
 
         if ( value === "true" ) {
             let getDateTime = new Date();
-            let dateTimeFormat = getDateTime.getFullYear() + "-" + (getDateTime.getMonth()+1) + "-" + getDateTime.getDate() + " " + getDateTime.getHours() + ":" + getDateTime.getMinutes();
+            let getFullMinutes = (date.getMinutes()<10?'0':'') + date.getMinutes(); 
+            let dateTimeFormat = getDateTime.getFullYear() + "-" + (getDateTime.getMonth()+1) + "-" + getDateTime.getDate() + " " + getDateTime.getHours() + ":" + getFullMinutes;
+
             let getUrl = window.location.href; 
             let mailContent = {
                 companyName       : htmlEntities($('#companyName').val()),
