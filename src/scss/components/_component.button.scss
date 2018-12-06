@@ -73,12 +73,11 @@
 .button--submit:hover {
   background: $white;
   @media screen and(max-width: $breakpoint-767) {
-    color: $tertiary-color;
+    background: $tertiary-color;
   }
 
   .button__text {
     color: $tertiary-color;
-
     @media screen and(max-width: $breakpoint-767) {
       color: $white;
     }

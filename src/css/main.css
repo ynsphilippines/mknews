@@ -613,7 +613,7 @@ button.button--submit[disabled] {
   background: #fff; }
   @media screen and (max-width: 767px) {
     .button--submit:hover {
-      color: #1774b8; } }
+      background: #1774b8; } }
   .button--submit:hover .button__text {
     color: #1774b8; }
     @media screen and (max-width: 767px) {
