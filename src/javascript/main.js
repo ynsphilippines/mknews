@@ -379,7 +379,8 @@ function handleSendMessage( value ) {
     const emailSender      = 'sendonly@y-n-s.co.jp';
     const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
     const emailHost        = 'smtp.elasticemail.com'; 
-    const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
+    //const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
+    const password         = 'ynsadmin123456';
     const emailAddress     = 'third.party.service.yns@gmail.com'; 
 
     // FOR TESTING
