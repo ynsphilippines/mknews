@@ -613,6 +613,9 @@ button.button--submit[disabled] {
   background: #fff; }
   .button--submit:hover .button__text {
     color: #1774b8; }
+    @media screen and (max-width: 767px) {
+      .button--submit:hover .button__text {
+        color: #fff; } }
 
 .button.button--modal {
   background: #fff;

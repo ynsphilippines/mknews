@@ -75,6 +75,10 @@
 
   .button__text {
     color: $tertiary-color;
+
+    @media screen and(max-width: $breakpoint-767) {
+      color: $white;
+    }
   }
 }
 

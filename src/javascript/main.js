@@ -407,6 +407,7 @@ function handleSendMessage( value ) {
                 $('input, textarea').val('');
                 $('select').val(0);
                 $('.button.button--submit').attr('disabled','disabled');
+                $('.button.button--submit .button__text').css('color','#FFF');
             } else {
                 validationStatus = false;
             }
