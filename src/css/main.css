@@ -611,6 +611,9 @@ button.button--submit[disabled] {
 
 .button--submit:hover {
   background: #fff; }
+  @media screen and (max-width: 767px) {
+    .button--submit:hover {
+      color: #1774b8; } }
   .button--submit:hover .button__text {
     color: #1774b8; }
     @media screen and (max-width: 767px) {
@@ -996,7 +999,7 @@ button.button--submit[disabled] {
         padding: 10px;
         font-size: 1.6rem;
         background-size: 20px;
-        height: 40px; } }
+        height: 50px; } }
   .inquiries__form-textarea {
     border: 1px solid #1071b9;
     border-radius: 5px;

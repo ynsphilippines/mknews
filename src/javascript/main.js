@@ -359,7 +359,7 @@ function handleGetFormInputValue() {
                 departmentName    : htmlEntities($('#departmentName').val()),
                 personInCharge    : htmlEntities($('#personInCharge').val()),
                 mailAddress       : htmlEntities($('#mailAddress').val()),
-                inquiriesOverview : htmlEntities($('#inquiries-overview').val()),
+                inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
                 contents          : htmlEntities($('#contents').val()),
                 dateTime          : htmlEntities(dateTimeFormat),
                 websiteUrl        : htmlEntities(getUrl)
@@ -407,7 +407,6 @@ function handleSendMessage( value ) {
                 $('input, textarea').val('');
                 $('select').val(0);
                 $('.button.button--submit').attr('disabled','disabled');
-                $('.button.button--submit .button__text').css('color','#FFF');
             } else {
                 validationStatus = false;
             }
