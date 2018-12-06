@@ -420,7 +420,7 @@ function handleSendMessage( value ) {
 function handleSideNotification( validationStatus ) {
 
     if ( validationStatus === true ) {
-        toastr.success("You've Successfully Send Your Message!");
+        toastr.success("ありがとうございます。担当より連絡いたしますので、しばらくお待ちください");
         $('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
     } else {
         toastr.error("Failed!")
@@ -472,7 +472,7 @@ function handleCopyClipBoard() {
     var clipboard = new ClipboardJS('#copy-clipboard');
     clipboard.on('success', function(e) {
         e.clearSelection();
-        toastr.success("You've Successfully Copy the Clip Board!");
+        toastr.success("URLをコピーしました");
         toastr.options = {
             "closeButton": true,
             "debug": false,
