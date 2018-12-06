@@ -359,7 +359,7 @@ function handleGetFormInputValue() {
                 departmentName    : htmlEntities($('#departmentName').val()),
                 personInCharge    : htmlEntities($('#personInCharge').val()),
                 mailAddress       : htmlEntities($('#mailAddress').val()),
-                inquiriesOverview : htmlEntities($('#inquiries-overview option[id="'+ $('#inquiries-overview').val() +'"]').text()),
+                inquiriesOverview : htmlEntities($('#inquiries-overview').val()),
                 contents          : htmlEntities($('#contents').val()),
                 dateTime          : htmlEntities(dateTimeFormat),
                 websiteUrl        : htmlEntities(getUrl)

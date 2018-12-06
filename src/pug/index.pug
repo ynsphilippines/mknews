@@ -235,7 +235,7 @@ html(lang="ja")
                 .inquiries__form-input
                   select.inquiries__form-select-box#inquiries-overview
                     each val, index in ["選択してください", "カスタマイズのご相談", "取材のご依頼", "その他お問い合わせ"]
-                      option(value=index id=index) #{val}
+                      option(value=val id=index) #{val}
               
               .inquiries__form-list
                 label.inquiries__form-label 内容 
@@ -331,4 +331,4 @@ html(lang="ja")
     script(src="/javascript/plugins/smtpjs.min.js")
     script(src="/javascript/plugins/toastr.min.js")
     script(src="/javascript/plugins/clipboard.min.js")
-    script(src="/javascript/main.min.js")
+    script(src="/javascript/main.min.js" charset="UTF-8")
