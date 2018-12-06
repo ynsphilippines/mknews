@@ -996,6 +996,7 @@ button.button--submit[disabled] {
     color: #5e5e5e; }
     @media screen and (max-width: 767px) {
       .inquiries__form-select-box {
+        -webkit-appearance: none;
         padding: 10px;
         font-size: 1.6rem;
         background-size: 20px;

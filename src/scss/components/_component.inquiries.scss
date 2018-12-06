@@ -75,6 +75,7 @@
     background-position: right 15px center;
     color: #5e5e5e;
     @media screen and(max-width: $breakpoint-767) {
+      -webkit-appearance: none;
       padding: 10px;
       font-size: $fontsize-smaller;
       background-size: 20px;
