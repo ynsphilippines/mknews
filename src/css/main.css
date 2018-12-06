@@ -977,6 +977,7 @@ button.button--submit[disabled] {
     color: #5e5e5e; }
     @media screen and (max-width: 767px) {
       .inquiries__form-input-box {
+        -webkit-appearance: none;
         padding: 10px;
         font-size: 1.6rem; } }
   .inquiries__form-required {
@@ -1009,6 +1010,9 @@ button.button--submit[disabled] {
     width: 100%;
     resize: none;
     color: #5e5e5e; }
+    @media screen and (max-width: 767px) {
+      .inquiries__form-textarea {
+        -webkit-appearance: none; } }
   .inquiries__button-wrapper {
     display: inline-block;
     padding-top: 20px;

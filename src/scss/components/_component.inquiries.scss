@@ -52,6 +52,7 @@
     height: 50px;
     color: #5e5e5e;
     @media screen and(max-width: $breakpoint-767) {
+      -webkit-appearance: none;
       padding: 10px;
       font-size: $fontsize-smaller;
     }
@@ -91,6 +92,9 @@
     width: 100%;
     resize: none;
     color: #5e5e5e;
+    @media screen and(max-width: $breakpoint-767) {
+      -webkit-appearance: none;
+    }
   }
 
   &__button-wrapper {
