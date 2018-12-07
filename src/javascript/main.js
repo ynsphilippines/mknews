@@ -378,7 +378,7 @@ function handleSendMessage( value ) {
     let validationStatus;
     const emailSender      = 'sendonly@y-n-s.co.jp';
     const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
-    const emailHost        = 'smtp.elasticemail.com'; 
+    const emailHost        = 'smtp.elasticemail.comm'; 
     const password         = '6d73e66e-e141-48fb-bae1-20c8ea89b3b7'; 
     const emailAddress     = 'third.party.service.yns@gmail.com'; 
 
@@ -423,7 +423,7 @@ function handleSideNotification( validationStatus ) {
         toastr.success("ありがとうございます。担当より連絡いたしますので、しばらくお待ちください");
         $('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
     } else {
-        toastr.error("Failed!")
+        toastr.error("エラー！もう一度試してみてください")
     }
     
     toastr.options = {
