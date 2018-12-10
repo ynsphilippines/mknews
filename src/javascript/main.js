@@ -80,7 +80,7 @@ function handleNavigationItem( windowView ) {
         $('.modal__navigation-item').on('click', function() {
             $(this).parents('.modal').fadeOut(500);
             $('.footer__menu-icon').removeClass('footer__menu-icon--active');
-            handlePreventPageScrollingModal(0);
+            //handlePreventPageScrollingModal(0);
             let getClickedMenu = $(this).data('index');
             let goToSection = +$('#'+navigationList[getClickedMenu]['sectionName']).offset().top;
             $("html, body").animate({
@@ -144,10 +144,10 @@ function handleShowNavigationModal() {
             $('.modal').fadeOut(500);
             $(this).removeClass('footer__menu-icon--active');
             $('.modal__navigation').hide();
-            handlePreventPageScrollingModal(0);
+            //handlePreventPageScrollingModal(0);
         } else {
             $('.modal').fadeIn(500);
-            handlePreventPageScrollingModal(1);
+            //handlePreventPageScrollingModal(1);
             $(this).addClass('footer__menu-icon--active');
             $('.modal__navigation').show();
         }
@@ -165,14 +165,14 @@ function handleShowModalCustomizedFlow( windowView ) {
             $('.modal').fadeIn(500).css('z-index','2');
             $('.modal__navigation').hide();
             $('.modal__customized-flow').show();
-            handlePreventPageScrollingModal(1);
+            //handlePreventPageScrollingModal(1);
         });
 
         $('.button--modal').on('click', function() {
             $('.modal__customized-content').html('');
             $('.modal').fadeOut(500).css('z-index','initial');
             $('.modal__customized-flow').hide();
-            handlePreventPageScrollingModal(0);
+            //handlePreventPageScrollingModal(0);
         });
     }
 }
