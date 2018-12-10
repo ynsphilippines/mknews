@@ -198,7 +198,7 @@ function handleFormValidation() {
     $('.button.button--submit').attr('disabled', 'disabled');
 
     // COMPANY NAME
-    $('#companyName').on('keyup', function(e) {
+    $('#companyName').on('keyup blur', function(e) {
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
@@ -220,7 +220,7 @@ function handleFormValidation() {
     });
 
     // DEPARTMENT NAME
-    $('#departmentName').on('keyup', function() {
+    $('#departmentName').on('keyup blur', function() {
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if( !halfWidthKana.test($(this).val())) { 
             if ( $(this).val().length > 100 ) {
@@ -237,7 +237,7 @@ function handleFormValidation() {
     });
 
     // PERSON IN CHARGE
-    $('#personInCharge').on('keyup', function() {
+    $('#personInCharge').on('keyup blur', function() {
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
@@ -259,7 +259,7 @@ function handleFormValidation() {
     });
 
     // EMAIL ADDRESS
-    $('#mailAddress').on('keyup', function(e) {
+    $('#mailAddress').on('keyup blur', function(e) {
         emailAddress = $(this);
         let emailRegex = /^[^./@]+[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
@@ -295,7 +295,7 @@ function handleFormValidation() {
     });
 
     // CONTENTS ( BODY )
-    $('#contents').on('keyup', function() {
+    $('#contents').on('keyup blur', function() {
         let halfWidthKana = /[\uFF00-\uFFEF]/g;
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) {
