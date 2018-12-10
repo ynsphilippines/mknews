@@ -3,7 +3,7 @@ html(lang="ja")
     title Make News - ニュースアプリのカスタマイズ開発
     meta(name="description" content='"Make News"は、ニュースアプリの開発・カスタマイズに特化した製品です。自社内や関連企業に向けた周知のためなど、ある特定のクローズドコミュニティに最適化したデザインでスマホアプリが制作できます')
     meta(property="og:url" content="https://makenews.y-n-s.co.jp/")
-    meta(property="fb:app_id" content="335578333723688")
+    meta(property="fb:app_id" content="576750896103175")
     meta(property="og:type" content="article")
     meta(property="og:title" content="Make News - ニュースアプリのカスタマイズ開発")
     meta(property="og:description" content='"Make News"は、ニュースアプリの開発・カスタマイズに特化した製品です。自社内や関連企業に向けた周知のためなど、ある特定のクローズドコミュニティに最適化したデザインでスマホアプリが制作できます')
@@ -19,6 +19,14 @@ html(lang="ja")
   body
     #fb-root
       script.
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '576750896103175',
+            xfbml      : true,
+            version    : 'v3.2'
+          });
+          FB.AppEvents.logPageView();
+        };
         (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
