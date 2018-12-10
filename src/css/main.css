@@ -1168,7 +1168,8 @@ button.button--submit[disabled] {
     cursor: pointer; }
     @media screen and (max-width: 767px) {
       .footer__social-button {
-        padding: 6px; } }
+        padding: 2px;
+        border-radius: 3px; } }
   .footer__social-item {
     display: inline-block;
     vertical-align: top;
@@ -1252,6 +1253,16 @@ button.button--submit[disabled] {
         transition: 0.4s;
         z-index: 2;
         color: #fff; } }
+
+@media screen and (max-width: 767px) {
+  .footer__social-list-pc {
+    display: none; } }
+
+.footer__social-list-sp {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .footer__social-list-sp {
+      display: block; } }
 
 .modal {
   position: fixed;

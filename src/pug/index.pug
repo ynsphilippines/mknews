@@ -280,9 +280,9 @@ html(lang="ja")
     footer.footer#js-operating-company
       .footer__container
         .footer__social-media
-          .footer__social-list
+          .footer__social-list.footer__social-list-pc
             .footer__social-item
-              .fb-like(data-href="https://www.facebook.com/YNSPhilippines/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false" ) 
+              .fb-like(data-href="https://www.facebook.com/YNSPhilippines/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false" ) 
 
             .footer__social-item
               .fb-share-button(data-href="https://makenews.y-n-s.co.jp/" data-layout="button" data-size="large" data-mobile-iframe="true")
@@ -290,6 +290,23 @@ html(lang="ja")
             
             .footer__social-item
               a.twitter-share-button(href="https://twitter.com/intent/tweet" data-show-count="false" data-size="large" data-text=' ' data-hashtags="makenews" data-lang="ja" ) ツイート
+              script(async src="https://platform.twitter.com/widgets.js")
+
+            .footer__social-item
+              a.footer__social-button.footer__social-button-icon#copy-clipboard(data-clipboard-text="Just because you can doesn't mean you should — clipboard.js")
+                img.footer__social-icon.footer__social-icon-copy(src="/images/copy-url.png" alt="copy url")
+                span.footer__social-text URLコピー
+
+          .footer__social-list.footer__social-list-sp
+            .footer__social-item
+              .fb-like(data-href="https://www.facebook.com/YNSPhilippines/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false" ) 
+
+            .footer__social-item
+              .fb-share-button(data-href="https://makenews.y-n-s.co.jp/" data-layout="button" data-size="small" data-mobile-iframe="true")
+                a.fb-xfbml-parse-ignore(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmakenews.y-n-s.co.jp%2F&amp;src=sdkpreparse")
+            
+            .footer__social-item
+              a.twitter-share-button(href="https://twitter.com/intent/tweet" data-show-count="false" data-size="small" data-text=' ' data-hashtags="makenews" data-lang="ja" ) ツイート
               script(async src="https://platform.twitter.com/widgets.js")
 
             .footer__social-item

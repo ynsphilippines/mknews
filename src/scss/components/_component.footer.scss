@@ -90,7 +90,8 @@
     border-radius: 5px;
     cursor: pointer;
     @media screen and(max-width: $breakpoint-767) {
-      padding: 6px;
+      padding: 2px;
+      border-radius: 3px;
     }
   }
 
@@ -201,5 +202,17 @@
       z-index: 2;
       color: $white;
     }
+  }
+}
+
+.footer__social-list-pc {
+  @media screen and(max-width: $breakpoint-767) {
+    display: none;
+  }
+}
+.footer__social-list-sp {
+  display: none;
+  @media screen and(max-width: $breakpoint-767) {
+    display: block;
   }
 }
