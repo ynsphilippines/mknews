@@ -674,7 +674,7 @@ button.button--submit[disabled] {
   .banner__subtitle-text {
     font-size: 2.4rem;
     color: #fff;
-    font-weight: bold; }
+    font-weight: normal; }
     @media screen and (max-width: 767px) {
       .banner__subtitle-text {
         display: block;
@@ -926,7 +926,7 @@ button.button--submit[disabled] {
   .customized-flow__description {
     font-size: 1.8rem;
     color: #505150;
-    font-weight: 600; }
+    font-weight: normal; }
     @media screen and (max-width: 767px) {
       .customized-flow__description {
         display: none; } }
@@ -939,7 +939,7 @@ button.button--submit[disabled] {
     margin-bottom: 50px;
     font-size: 1.8rem;
     color: #5e5e5e;
-    font-weight: bold; }
+    font-weight: normal; }
     @media screen and (max-width: 767px) {
       .inquiries__note-text {
         font-size: 1.6rem; } }

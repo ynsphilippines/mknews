@@ -74,7 +74,7 @@
   &__description {
     font-size: $fontsize-small;
     color: #505150;
-    font-weight: 600;
+    font-weight: normal;
     @media screen and(max-width: $breakpoint-767) {
       display: none;
     }

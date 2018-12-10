@@ -7,7 +7,7 @@
     margin-bottom: 50px;
     font-size: $fontsize-small;
     color: $secondary-color;
-    font-weight: bold;
+    font-weight: normal;
     @media screen and(max-width: $breakpoint-767) {
       font-size: $fontsize-smaller;
     }
