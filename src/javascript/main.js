@@ -368,7 +368,7 @@ function handleGetFormInputValue() {
             $('.inquiries__form-list').removeClass('js-error, inquiries__form-list--error');
         } else {
             $('.js-error').addClass('inquiries__form-list--error');
-            toastr.error("適切にご入力ください!");
+            toastr.error("適切にご入力ください");
         }
     });
 }
