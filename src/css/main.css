@@ -1220,6 +1220,8 @@ button.button--submit[disabled] {
         width: 195px; } }
   .footer__logo-img {
     width: 100%; }
+  .footer__monaca-img {
+    margin-top: 30px; }
   .footer__contact-content {
     text-align: left;
     font-weight: bold;
