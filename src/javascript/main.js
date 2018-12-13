@@ -266,14 +266,16 @@ function handleFormValidation() {
 
         if ( $(this).val().length > 0 ) {
             if( !halfWidthKana.test($(this).val())) { 
-                if( !emailRegex.test(emailAddress.val())) { 
+                if ( ( !emailRegex.test(emailAddress.val())) || ( $(this).val().length > 255 ) || ((/\s+/).test($(this).val())) ){ 
                     mailAddress = false;
                     $(this).parents('.inquiries__form-list').addClass('js-error');
-                } else {
+                } 
+                else {
                     mailAddress = true;
                     $(this).parents('.inquiries__form-list').removeClass('js-error inquiries__form-list--error');
                 }
-            } else {
+            } 
+            else {
                 mailAddress = false;
                 $(this).parents('.inquiries__form-list').addClass('js-error');
             }
