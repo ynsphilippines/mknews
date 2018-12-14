@@ -470,8 +470,8 @@ function handlePreventPageScrollingModal(modalState) {
 
 function handleCopyClipBoard() {
     let getPath = window.location.href;
-    $('#copy-clipboard').attr('data-clipboard-text',getPath);
-    var clipboard = new ClipboardJS('#copy-clipboard');
+    $('#copy-clipboard, #copy-clipboard-sp').attr('data-clipboard-text',getPath);
+    var clipboard = new ClipboardJS('#copy-clipboard, #copy-clipboard-sp');
     clipboard.on('success', function(e) {
         e.clearSelection();
         toastr.success("URLをコピーしました");
