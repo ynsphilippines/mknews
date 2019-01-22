@@ -141,12 +141,12 @@ gulp.task('distJavascript', function () {
 });
 
 gulp.task('distImage', function () {
-  return gulp.src(paths.srcImg)
-  .pipe(cache(imagemin({
-    optimizationLevel: 3,
-    progressive: true,
-    interlaced: true})))
-  .pipe(gulp.dest(paths.distImg));
+  // return gulp.src(paths.srcImg)
+  // .pipe(cache(imagemin({
+  //   optimizationLevel: 3,
+  //   progressive: true,
+  //   interlaced: true})))
+  // .pipe(gulp.dest(paths.distImg));
 });
 
 gulp.task('build', ['distHtml', 'distCss', 'distImage', 'distJavascript']);
