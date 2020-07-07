@@ -381,16 +381,16 @@ function handleSendMessage( value ) {
     const emailSender      = 'sendonly@y-n-s.co.jp';
     const emailReceiver    = 'issue-SMN-bx7EwRrfyy8Z9Wvzu43ANT4Jp@i3.backlog.jp';
     const emailHost        = 'smtp.elasticemail.com';
-    //const password         = '8978ADCF6391790FEFAAD019A006F945F6C6'; 
-    //const emailAddress     = 'third.party.service.yns@gmail.com'; 
+    const password         = '8978ADCF6391790FEFAAD019A006F945F6C6'; 
+    const emailAddress     = 'third.party.service.yns@gmail.com'; 
 
     // FOR TESTING
     //const emailHost        = 'smtp.gmail.com';
     //const password         = 'ynsadmin1234'; 
 
     // FOR TESTING - KATE
-    const emailAddress     = 'cathdionisio.yns@gmail.com';
-    const password         = '5B7D6209393D538B57AC65BDEC9FBC526261'; 
+    //const emailAddress     = 'cathdionisio.yns@gmail.com';
+    //const password         = '5B7D6209393D538B57AC65BDEC9FBC526261'; 
 
     let departNameAndSummaryValue = "";
     if ( value['departmentName'] === "") {
