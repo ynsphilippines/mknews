@@ -384,10 +384,6 @@ function handleSendMessage( value ) {
     const password         = '8978ADCF6391790FEFAAD019A006F945F6C6';
     const emailAddress     = 'third.party.service.yns@gmail.com'; 
 
-    // FOR TESTING
-    // const emailHost        = 'smtp.gmail.com';
-    // const password         = 'ynsadmin1234'; 
-
     let departNameAndSummaryValue = "";
     if ( value['departmentName'] === "") {
         departNameAndSummaryValue = value['personInCharge'];
